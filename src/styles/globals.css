@@ -1,0 +1,79 @@
+html,body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:focus:not {
+  box-shadow: none;
+  border-bottom: none;
+  outline: none;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:focus {
+  outline: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+.embla__dots {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.embla__dot {
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  margin: 70px 15px 70px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 300px;
+}
+
+.embla__dot:after {
+  background-color: #E8336A;
+  width: 27px;
+  height: 27px;
+  border-radius: 300px;
+  content: "";
+}
+
+.embla__dot.is-selected:after {
+  background-color: #E8336A;
+  width: 45px;
+  height: 45px;
+  border-radius: 300px;
+}

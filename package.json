@@ -1,0 +1,23 @@
+{
+  "name": "lp-reanimate",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "embla-carousel-react": "^6.0.2",
+    "next": "^12.0.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-player": "^2.9.0",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "eslint": "8.4.0",
+    "eslint-config-next": "12.0.7"
+  }
+}
