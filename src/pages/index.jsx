@@ -170,7 +170,7 @@ export default function LandingPage() {
             </div>
                 <div className={styles.headerTitle}>Turn days of work into minutes with <span className={styles.headerTitleReanimate}>re.animate.</span></div>
                 <div className={styles.headerText}>The automation platform that will revolutionize your digital banner production.</div>
-                <Link href="/formEN?uri=" as={"/formEN"} >
+                <Link href="/formen?uri=" as={"/formen"} >
                     <button className={styles.headerButton}>TRY IT NOW!<div className={styles.headerButtonArrow} /></button>
                 </Link>   
         </div>
@@ -208,7 +208,7 @@ export default function LandingPage() {
             </div>
             <div className={styles.mmboxVideoButton}>
                 <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
-                <Link href="/formEN?uri=" as={"/formEN"}>
+                <Link href="/formen?uri=" as={"/formen"}>
                     <button className={styles.mmboxButton}>TRY IT NOW!<div className={styles.mmboxButtonArrow} /></button>
                 </Link>
             </div>
@@ -221,7 +221,7 @@ export default function LandingPage() {
             </div>
             <div className={styles.raboxVideoButton}>
                 <div className={styles.raboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=F6nh2AEccgI"/></div>
-                <Link href="/formEN?uri=" as={"/formEN"}>
+                <Link href="/formen?uri=" as={"/formen"}>
                     <button className={styles.raboxButton}>TRY IT NOW!<div className={styles.raboxButtonArrow} /></button>
                 </Link>
             </div>
@@ -234,7 +234,7 @@ export default function LandingPage() {
             </div>
             <div className={styles.daboxVideoButton}>
                 <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
-                <Link href="/formEN?uri=" as={"/formEN"}>
+                <Link href="/formen?uri=" as={"/formen"}>
                     <button className={styles.daboxButton}>TRY IT NOW!<div className={styles.daboxButtonArrow} /></button>
                 </Link>
             </div>
@@ -258,7 +258,7 @@ export default function LandingPage() {
                 <div className={styles.footerIconInsta} onClick={instaLink} />
                 <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
             </div>
-            <Link href="/formEN?uri=" as={"/formEN"}>
+            <Link href="/formen?uri=" as={"/formen"}>
                 <button className={styles.footerButton}>TRY IT NOW! <span className={styles.footerButtonArrow} /></button>
             </Link>
         </div>
@@ -277,7 +277,7 @@ export default function LandingPage() {
                 </div>
                     <div className={styles.headerTitle}>Transforme dias de trabalho em minutos com o <span className={styles.headerTitleReanimate}>re.animate.</span></div>
                     <div className={styles.headerText}>A plataforma de automação que vai revolucionar sua produção de banners digitais.</div>
-                    <Link href="/formBR?uri=" as={"/formBR"} >
+                    <Link href="/formbr?uri=" as={"/formbr"} >
                         <button className={styles.headerButton}>Contrate agora <div className={styles.headerButtonArrow} /></button>
                     </Link>   
             </div>
@@ -315,7 +315,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.mmboxVideoButton}>
                     <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
-                    <Link href="/formBR?uri=" as={"/formBR"}>
+                    <Link href="/formbr?uri=" as={"/formbr"}>
                         <button className={styles.mmboxButton}>Contrate agora<div className={styles.mmboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -328,7 +328,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.raboxVideoButton}>
                     <div className={styles.raboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=F6nh2AEccgI"/></div>
-                    <Link href="/formBR?uri=" as={"/formBR"}>
+                    <Link href="/formbr?uri=" as={"/formbr"}>
                         <button className={styles.raboxButton}>Contrate agora<div className={styles.raboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -341,7 +341,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.daboxVideoButton}>
                     <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
-                    <Link href="/formBR?uri=" as={"/formBR"}>
+                    <Link href="/formbr?uri=" as={"/formbr"}>
                         <button className={styles.daboxButton}>Contrate agora<div className={styles.daboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -365,7 +365,7 @@ export default function LandingPage() {
                     <div className={styles.footerIconInsta} onClick={instaLink} />
                     <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
                 </div>
-                <Link href="/formBR?uri=" as={"/formBR"}>
+                <Link href="/formbr?uri=" as={"/formbr"}>
                     <button className={styles.footerButton}>Contrate agora <span className={styles.footerButtonArrow} /></button>
                 </Link>
             </div>

@@ -37,7 +37,7 @@ const FormEN = () => {
 
             .then((result) => {
                 console.log(result);
-                window.location.href = "/formcompleteEN";
+                window.location.href = "/formcompleteen";
             }, (error) => {
                 console.log(error);
                 setLoading(false)
