@@ -311,7 +311,7 @@ export default function LandingPage() {
             <div className={styles.mastermotionbox}>
                 <div className={styles.mmboxLogoText}>
                     <div className={styles.mmboxLogo} />
-                    <div className={styles.mmboxText}>Nunca foi tão fácil criar banners animados. A partir do KV (psd), você pode animar as peças Master em HTML5 sem a necessidade de saber o código CSS ou JavaScript.</div>
+                    <div className={styles.mmboxText}>Nunca foi tão fácil criar banners animados. A partir do KV (psd), você pode animar as peças master em HTML5 sem a necessidade de saber o código CSS ou JavaScript.</div>
                 </div>
                 <div className={styles.mmboxVideoButton}>
                     <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
@@ -324,7 +324,7 @@ export default function LandingPage() {
             <div className={styles.replicateadsbox}>
                 <div className={styles.raboxLogoText}>
                     <div className={styles.raboxLogo} />
-                    <div className={styles.raboxText}>O formato perfeito para sua necessidade. Desdobre a peça Master, animada pelo primeiro módulo, em diversos formatos e especificações de mídia: Vertical, horizontal, quadrado e mobile.</div>
+                    <div className={styles.raboxText}>O formato perfeito para sua necessidade. Desdobre a peça master, animada pelo primeiro módulo, em diversos formatos e especificações de mídia: Vertical, horizontal, quadrado e mobile.</div>
                 </div>
                 <div className={styles.raboxVideoButton}>
                     <div className={styles.raboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=F6nh2AEccgI"/></div>
