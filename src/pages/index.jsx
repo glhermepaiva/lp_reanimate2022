@@ -204,7 +204,7 @@ export default function LandingPage() {
         <div className={styles.mastermotionbox}>
             <div className={styles.mmboxLogoText}>
                 <div className={styles.mmboxLogo} />
-                <div className={styles.mmboxText}>It's never been so easy to create animated banners. Utilizing your Key Visual, you can create HTML5 animated banners without the need to know CSS or JavaScript.</div>
+                <div className={styles.mmboxText}>It&apos;s never been so easy to create animated banners. Utilizing your Key Visual, you can create HTML5 animated banners without the need to know CSS or JavaScript.</div>
             </div>
             <div className={styles.mmboxVideoButton}>
                 <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
@@ -244,7 +244,7 @@ export default function LandingPage() {
             <div className={styles.aboutBG} />
             <div className={styles.aboutTitle}><span className={styles.aboutTitleReanimate}>re.animate</span> is a Point Media solution.</div>
             <div className={styles.aboutArrowRight} />
-            <div className={styles.aboutText}>Founded in 2017, Point Media specializes in helping companies overcome the challenges of digital transformation. We operate in processes such as online media, digital production and Martech solutions so that our customers' communication can be increasingly assertive within a constantly evolving market. <br/><br/>Learn also about our solutions for DCO, Media Control and ADOPs.</div>
+            <div className={styles.aboutText}>Founded in 2017, Point Media specializes in helping companies overcome the challenges of digital transformation. We operate in processes such as online media, digital production and Martech solutions so that our customers&apos; communication can be increasingly assertive within a constantly evolving market. <br/><br/>Learn also about our solutions for DCO, Media Control and ADOPs.</div>
             <div className={styles.aboutArrowLeft} />
         </div>
         <div className={styles.carousel}>
