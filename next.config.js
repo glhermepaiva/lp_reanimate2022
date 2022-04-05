@@ -5,8 +5,10 @@ module.exports = {
   ) {
     return {
       '/': { page: '/' },
-      '/form': { page: '/form' },
-      '/formcomplete': { page: '/formcomplete' },
+      '/formen': { page: '/formen' },
+      '/formbr': { page: '/formbr' },
+      '/formcompleteen': { page: '/formcompleteen' },
+      '/formcompletebr': { page: '/formcompletebr' },
     }
   },
   basePath: '',
