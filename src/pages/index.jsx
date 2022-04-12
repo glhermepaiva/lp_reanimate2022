@@ -173,6 +173,7 @@ export default function LandingPage() {
                 <Link href="/formen?uri=" as={"/formen"} >
                     <button className={styles.headerButton}>TRY IT NOW!<div className={styles.headerButtonArrow} /></button>
                 </Link>   
+                <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div>
         </div>
         <div className={styles.advantages}>
             <div className={styles.qualityBox}>
@@ -279,7 +280,8 @@ export default function LandingPage() {
                     <div className={styles.headerText}>A plataforma de automação que vai revolucionar sua produção de banners digitais.</div>
                     <Link href="/formbr?uri=" as={"/formbr"} >
                         <button className={styles.headerButton}>Contrate agora <div className={styles.headerButtonArrow} /></button>
-                    </Link>   
+                    </Link>
+                    <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div>
             </div>
             <div className={styles.advantages}>
                 <div className={styles.qualityBox}>

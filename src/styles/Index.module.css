@@ -211,6 +211,15 @@
     top: 23px;
 }
 
+.promoVideo {
+    transform: scale(0.5);
+    border-radius: 18px;
+    overflow: hidden;
+    border: none;
+    margin: -80px 0 -40px 0;
+    box-shadow: -12px 12px #1B9ADA;
+}
+
 /********* ADVANTAGES ***********/
 
 .advantages {
@@ -791,6 +800,11 @@
         margin: 20px 0 40px -440px;
     }
 
+    .promoVideo {
+        transform: scale(1);
+        margin: 30px 0 70px 0;
+    }
+
     .advantages {
         flex-direction: row;
         justify-content: space-around;
@@ -1141,6 +1155,11 @@
     .headerButton {
         transform: scale(0.7);
         margin: 20px 0 50px -830px;
+    }
+
+    .promoVideo {
+        transform: scale(1.2);
+        margin: 70px 0 90px 0;
     }
 
     .advantages {
