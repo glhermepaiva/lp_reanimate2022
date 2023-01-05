@@ -33,7 +33,7 @@ const FormEN = () => {
         const isValid = await schema.isValid(formData);
 
         if (isValid) {
-            emailjs.sendForm('service_ibuddku', 'template_eydmlmt', e.target, 'user_qksKqi9BtojdtprKYCtue')
+            emailjs.sendForm('service_ibuddku', 'template_reanimate', e.target, 'user_qksKqi9BtojdtprKYCtue')
 
             .then((result) => {
                 console.log(result);
