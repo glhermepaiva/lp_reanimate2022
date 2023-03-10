@@ -10,7 +10,7 @@ const FormCompleteBR = () => {
                 <title>Formulário enviado! | re.animate</title>
             </Head>
             <div className={styles.formContainer}>
-                <Link href="/?uri=" as={"/"}>
+                <Link href="/?uri=" as={"/"} passHref>
                     <span className={styles.formButtonClose} />
                 </Link>
                 <div className={styles.formTitle}>Enviado com sucesso!</div>

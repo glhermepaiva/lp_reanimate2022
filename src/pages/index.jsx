@@ -170,7 +170,7 @@ export default function LandingPage() {
             </div>
                 <div className={styles.headerTitle}>Turn days of work into minutes with <span className={styles.headerTitleReanimate}>re.animate.</span></div>
                 <div className={styles.headerText}>The automation platform that will revolutionize your digital banner production.</div>
-                <Link href="/formen?uri=" as={"/formen"} >
+                <Link href="/formen?uri=" as={"/formen"} passHref>
                     <button className={styles.headerButton}>TRY IT NOW!<div className={styles.headerButtonArrow} /></button>
                 </Link>   
                 {/* <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div> */}
@@ -211,7 +211,7 @@ export default function LandingPage() {
             </div>
             <div className={styles.mmboxVideoButton}>
                 <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
-                <Link href="/formen?uri=" as={"/formen"}>
+                <Link href="/formen?uri=" as={"/formen"} passHref>
                     <button className={styles.mmboxButton}>TRY IT NOW!<div className={styles.mmboxButtonArrow} /></button>
                 </Link>
             </div>
@@ -224,7 +224,7 @@ export default function LandingPage() {
             </div>
             <div className={styles.raboxVideoButton}>
                 <div className={styles.raboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=F6nh2AEccgI"/></div>
-                <Link href="/formen?uri=" as={"/formen"}>
+                <Link href="/formen?uri=" as={"/formen"} passHref>
                     <button className={styles.raboxButton}>TRY IT NOW!<div className={styles.raboxButtonArrow} /></button>
                 </Link>
             </div>
@@ -237,7 +237,7 @@ export default function LandingPage() {
             </div>
             <div className={styles.daboxVideoButton}>
                 <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
-                <Link href="/formen?uri=" as={"/formen"}>
+                <Link href="/formen?uri=" as={"/formen"} passHref>
                     <button className={styles.daboxButton}>TRY IT NOW!<div className={styles.daboxButtonArrow} /></button>
                 </Link>
             </div>
@@ -246,10 +246,10 @@ export default function LandingPage() {
         <div className={styles.moviebox}>
             <div className={styles.movieboxLogoText}>
                 <div className={styles.movieboxLogo} />
-                <div className={styles.movieboxText}>With "Re.Animate to Movie" you can turn your projects (.REAN files) into video files (.MP4) and GIFs. That way you have all the formats you need to make your campaing very complete.</div>
+                <div className={styles.movieboxText}>With &quot;Re.Animate to Movie&quot; you can turn your projects (.REAN files) into video files (.MP4) and GIFs. That way you have all the formats you need to make your campaing very complete.</div>
             </div>
             <div className={styles.movieboxVideoButton}>
-                <Link href="/formen?uri=" as={"/formen"}>
+                <Link href="/formen?uri=" as={"/formen"} passHref>
                     <button className={styles.movieboxButton}>TRY IT NOW!<div className={styles.movieboxButtonArrow} /></button>
                 </Link>
             </div>
@@ -261,7 +261,7 @@ export default function LandingPage() {
                 <div className={styles.amboxText}>Your operation way more agile with a tool that allows for an optimized e-mail marketing production with just a few clicks.</div>
             </div>
             <div className={styles.amboxVideoButton}>
-                <Link href="/formen?uri=" as={"/formen"}>
+                <Link href="/formen?uri=" as={"/formen"} passHref>
                     <button className={styles.amboxButton}>TRY IT NOW!<div className={styles.amboxButtonArrow} /></button>
                 </Link>
             </div>
@@ -285,7 +285,7 @@ export default function LandingPage() {
                 <div className={styles.footerIconInsta} onClick={instaLink} />
                 <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
             </div>
-            <Link href="/formen?uri=" as={"/formen"}>
+            <Link href="/formen?uri=" as={"/formen"} passHref>
                 <button className={styles.footerButton}>TRY IT NOW! <span className={styles.footerButtonArrow} /></button>
             </Link>
         </div>
@@ -304,7 +304,7 @@ export default function LandingPage() {
                 </div>
                     <div className={styles.headerTitle}>Transforme dias de trabalho em minutos com o <span className={styles.headerTitleReanimate}>re.animate.</span></div>
                     <div className={styles.headerText}>A plataforma de automação que vai revolucionar sua produção de banners digitais.</div>
-                    <Link href="/formbr?uri=" as={"/formbr"} >
+                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
                         <button className={styles.headerButton}>Contrate agora <div className={styles.headerButtonArrow} /></button>
                     </Link>
                     {/* <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div> */}
@@ -345,7 +345,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.mmboxVideoButton}>
                     <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
-                    <Link href="/formbr?uri=" as={"/formbr"}>
+                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
                         <button className={styles.mmboxButton}>Contrate agora<div className={styles.mmboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -358,7 +358,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.raboxVideoButton}>
                     <div className={styles.raboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=F6nh2AEccgI"/></div>
-                    <Link href="/formbr?uri=" as={"/formbr"}>
+                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
                         <button className={styles.raboxButton}>Contrate agora<div className={styles.raboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -371,7 +371,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.daboxVideoButton}>
                     <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
-                    <Link href="/formbr?uri=" as={"/formbr"}>
+                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
                         <button className={styles.daboxButton}>Contrate agora<div className={styles.daboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -383,7 +383,7 @@ export default function LandingPage() {
                     <div className={styles.movieboxText}>Com o “Re.Animate to Movie”, você consegue transformar seus projetos (arquivos .REAN) em arquivos de vídeo (.MP4) e GIFs. Assim, você conta com todos os formatos que precisa para deixar sua campanha pra lá de completa.</div>
                 </div>
                 <div className={styles.movieboxVideoButton}>
-                    <Link href="/formbr?uri=" as={"/formbr"}>
+                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
                         <button className={styles.movieboxButton}>Contrate agora<div className={styles.movieboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -395,7 +395,7 @@ export default function LandingPage() {
                     <div className={styles.amboxText}>Sua operação muito mais ágil com uma ferramenta que permite a produção otimizada de e-mail marketing em poucos cliques.</div>
                 </div>
                 <div className={styles.amboxVideoButton}>
-                    <Link href="/formbr?uri=" as={"/formbr"}>
+                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
                         <button className={styles.amboxButton}>Contrate agora<div className={styles.amboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -419,7 +419,7 @@ export default function LandingPage() {
                     <div className={styles.footerIconInsta} onClick={instaLink} />
                     <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
                 </div>
-                <Link href="/formbr?uri=" as={"/formbr"}>
+                <Link href="/formbr?uri=" as={"/formbr"} passHref>
                     <button className={styles.footerButton}>Contrate agora <span className={styles.footerButtonArrow} /></button>
                 </Link>
             </div>

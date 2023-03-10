@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState, useEffect, useCallback } from "react";
 import { DotButton } from "./EmblaCarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";

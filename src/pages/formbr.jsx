@@ -56,7 +56,7 @@ const FormBR = () => {
                 <title>Formulário | re.animate</title>
             </Head>
             <div className={styles.formContainer}>
-                <Link href="/?uri=" as={"/"}>
+                <Link href="/?uri=" as={"/"} passHref>
                     <span className={styles.formButtonClose} />
                 </Link>
                 {loading ? <div className={styles.formLoading}>Carregando...</div> : <div className={styles.formPage}>
