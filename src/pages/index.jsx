@@ -173,7 +173,7 @@ export default function LandingPage() {
                 <Link href="/formen?uri=" as={"/formen"} >
                     <button className={styles.headerButton}>TRY IT NOW!<div className={styles.headerButtonArrow} /></button>
                 </Link>   
-                <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div>
+                {/* <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div> */}
         </div>
         <div className={styles.advantages}>
             <div className={styles.qualityBox}>
@@ -194,13 +194,15 @@ export default function LandingPage() {
         </div>
         <div className={styles.presentation}>
             <div className={styles.presentationTitle}>Revolutionize your operation!</div>
-            <div className={styles.presentationText1}><b>re.animate</b> is divided into three features:</div>
+            <div className={styles.presentationText1}><b>re.animate</b> is divided into five features:</div>
             <div className={styles.presentationLogos}>
                 <div className={styles.logoMM} />
                 <div className={styles.logoRA} />
                 <div className={styles.logoDA} />
+                <div className={styles.logoMO} />
+                <div className={styles.logoAM} />
             </div>
-            <div className={styles.presentationText2}>Three programs that will bring automation to your banner production line.</div>
+            <div className={styles.presentationText2}>Five programs that will bring automation to your banner production line.</div>
         </div>
         <div className={styles.mastermotionbox}>
             <div className={styles.mmboxLogoText}>
@@ -237,6 +239,30 @@ export default function LandingPage() {
                 <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
                 <Link href="/formen?uri=" as={"/formen"}>
                     <button className={styles.daboxButton}>TRY IT NOW!<div className={styles.daboxButtonArrow} /></button>
+                </Link>
+            </div>
+        </div>
+        <div className={styles.blankSpace}></div>
+        <div className={styles.moviebox}>
+            <div className={styles.movieboxLogoText}>
+                <div className={styles.movieboxLogo} />
+                <div className={styles.movieboxText}>With "Re.Animate to Movie" you can turn your projects (.REAN files) into video files (.MP4) and GIFs. That way you have all the formats you need to make your campaing very complete.</div>
+            </div>
+            <div className={styles.movieboxVideoButton}>
+                <Link href="/formen?uri=" as={"/formen"}>
+                    <button className={styles.movieboxButton}>TRY IT NOW!<div className={styles.movieboxButtonArrow} /></button>
+                </Link>
+            </div>
+        </div>
+        <div className={styles.blankSpace}></div>
+        <div className={styles.automailerbox}>
+            <div className={styles.amboxLogoText}>
+                <div className={styles.amboxLogo} />
+                <div className={styles.amboxText}>Your operation way more agile with a tool that allows for an optimized e-mail marketing production with just a few clicks.</div>
+            </div>
+            <div className={styles.amboxVideoButton}>
+                <Link href="/formen?uri=" as={"/formen"}>
+                    <button className={styles.amboxButton}>TRY IT NOW!<div className={styles.amboxButtonArrow} /></button>
                 </Link>
             </div>
         </div>
@@ -281,7 +307,7 @@ export default function LandingPage() {
                     <Link href="/formbr?uri=" as={"/formbr"} >
                         <button className={styles.headerButton}>Contrate agora <div className={styles.headerButtonArrow} /></button>
                     </Link>
-                    <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div>
+                    {/* <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div> */}
             </div>
             <div className={styles.advantages}>
                 <div className={styles.qualityBox}>
@@ -302,13 +328,15 @@ export default function LandingPage() {
             </div>
             <div className={styles.presentation}>
                 <div className={styles.presentationTitle}>Revolucione a sua operação!</div>
-                <div className={styles.presentationText1}>O <b>re.animate</b> é dividido em três módulos:</div>
+                <div className={styles.presentationText1}>O <b>re.animate</b> é dividido em cinco módulos:</div>
                 <div className={styles.presentationLogos}>
                     <div className={styles.logoMM} />
                     <div className={styles.logoRA} />
                     <div className={styles.logoDA} />
+                    <div className={styles.logoMO} />
+                    <div className={styles.logoAM} />
                 </div>
-                <div className={styles.presentationText2}>Três programas que vão trazer automação a sua linha de produção de banners.</div>
+                <div className={styles.presentationText2}>Cinco programas que vão trazer automação a sua linha de produção de banners.</div>
             </div>
             <div className={styles.mastermotionbox}>
                 <div className={styles.mmboxLogoText}>
@@ -345,6 +373,30 @@ export default function LandingPage() {
                     <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
                     <Link href="/formbr?uri=" as={"/formbr"}>
                         <button className={styles.daboxButton}>Contrate agora<div className={styles.daboxButtonArrow} /></button>
+                    </Link>
+                </div>
+            </div>
+            <div className={styles.blankSpace}></div>
+            <div className={styles.moviebox}>
+                <div className={styles.movieLogoText}>
+                    <div className={styles.movieboxLogo} />
+                    <div className={styles.movieboxText}>Com o “Re.Animate to Movie”, você consegue transformar seus projetos (arquivos .REAN) em arquivos de vídeo (.MP4) e GIFs. Assim, você conta com todos os formatos que precisa para deixar sua campanha pra lá de completa.</div>
+                </div>
+                <div className={styles.movieboxVideoButton}>
+                    <Link href="/formbr?uri=" as={"/formbr"}>
+                        <button className={styles.movieboxButton}>Contrate agora<div className={styles.movieboxButtonArrow} /></button>
+                    </Link>
+                </div>
+            </div>
+            <div className={styles.blankSpace}></div>
+            <div className={styles.automailerbox}>
+                <div className={styles.amLogoText}>
+                    <div className={styles.amboxLogo} />
+                    <div className={styles.amboxText}>Sua operação muito mais ágil com uma ferramenta que permite a produção otimizada de e-mail marketing em poucos cliques.</div>
+                </div>
+                <div className={styles.amboxVideoButton}>
+                    <Link href="/formbr?uri=" as={"/formbr"}>
+                        <button className={styles.amboxButton}>Contrate agora<div className={styles.amboxButtonArrow} /></button>
                     </Link>
                 </div>
             </div>

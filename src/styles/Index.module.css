@@ -353,8 +353,22 @@
 
 .logoDA {
     background-image: url(../assets/logo_dap.png);
-    margin: 0 35px 30px 0;
+    margin: 0 35px 10px 0;
     width: 208px;
+    height: 59px;
+}
+
+.logoMO {
+    background-image: url(../assets/logo_movie2p.png);
+    margin: 0 23px 10px 0;
+    width: 195px;
+    height: 59px;
+}
+
+.logoAM {
+    background-image: url(../assets/logo_amp.png);
+    margin: 0 35px 30px 0;
+    width: 190px;
     height: 59px;
 }
 
@@ -520,7 +534,7 @@
     height: 72px;
     font-size: 25px;
     font-weight: bold;
-    margin: 0 0 70px 180px;
+    margin: 0 0 50px 180px;
     filter: drop-shadow(0px 9px 9px rgba(0, 0, 0, 0.16));
     cursor: pointer;
     text-align: left;
@@ -529,6 +543,100 @@
 
 .daboxButtonArrow {
     background-image: url(../assets/arrow_orange.png);
+    width: 13px;
+    height: 21px;
+    position: absolute;
+    left: 245px;
+    top: 28px;
+}
+
+.moviebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1BDA28;
+    color: #fff;
+    user-select: none;
+}
+
+.movieboxLogo {
+    background-image: url(../assets/logo_moviep.png);
+    margin: 30px 0 30px 0;
+    width: 264px;
+    height: 69px;
+}
+
+.movieboxText {
+    font-size: 15px;
+    width: 270px;
+}
+
+.movieboxButton {
+    background-color: #fff;
+    color: #1BDA28;
+    border: none;
+    border-radius: 36px;
+    width: 282px;
+    height: 72px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px 0 50px 0px;
+    filter: drop-shadow(0px 9px 9px rgba(0, 0, 0, 0.16));
+    cursor: pointer;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.movieboxButtonArrow {
+    background-image: url(../assets/arrow_green.png);
+    width: 13px;
+    height: 21px;
+    position: absolute;
+    left: 245px;
+    top: 28px;
+}
+
+.automailerbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F3BA14;
+    color: #fff;
+    user-select: none;
+}
+
+.amboxLogo {
+    background-image: url(../assets/logo_am2p.png);
+    margin: 30px 0 30px 0;
+    width: 223px;
+    height: 69px;
+}
+
+.amboxText {
+    font-size: 15px;
+    width: 270px;
+}
+
+.amboxButton {
+    background-color: #fff;
+    color: #F3BA14;
+    border: none;
+    border-radius: 36px;
+    width: 282px;
+    height: 72px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px 0 50px 0px;
+    filter: drop-shadow(0px 9px 9px rgba(0, 0, 0, 0.16));
+    cursor: pointer;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.amboxButtonArrow {
+    background-image: url(../assets/arrow_yellow.png);
     width: 13px;
     height: 21px;
     position: absolute;
@@ -893,6 +1001,20 @@
         height: 102px;
     }
 
+    .logoMO {
+        background-image: url(../assets/logo_movie2m.png);
+        margin: 0 23px 30px -175px;
+        width: 331px;
+        height: 100px;
+    }
+    
+    .logoAM {
+        background-image: url(../assets/logo_amm.png);
+        margin: 0 35px 40px -175px;
+        width: 323px;
+        height: 100px;
+    }
+
     .presentationText2 {
         font-size: 25px;
         line-height: 33px;
@@ -954,11 +1076,39 @@
         width: 600px;
         margin: 0 0 0 10px;
     }
+
+    .movieboxLogo {
+        background-image: url(../assets/logo_moviem.png);
+        margin: 30px 0 60px 10px;
+        width: 550px;
+        height: 120px;
+    }
+    
+    .movieboxText {
+        font-size: 25px;
+        line-height: 33px;
+        width: 600px;
+        margin: 0 0 0 10px;
+    }
     
     .daboxVideo {
         transform: scale(0.94);
         margin: 40px 0 40px 0;
         border-radius: 44px;
+    }
+
+    .amboxLogo {
+        background-image: url(../assets/logo_am2m.png);
+        margin: 30px 0 60px 10px;
+        width: 420px;
+        height: 130px;
+    }
+    
+    .amboxText {
+        font-size: 25px;
+        line-height: 33px;
+        width: 600px;
+        margin: 0 0 0 10px;
     }
 
     .aboutTitle{
@@ -1246,7 +1396,9 @@
 
     .presentationLogos {
         display: flex;
+        flex-wrap: wrap;
         margin: 0px 0 0 -15px;
+        width: 1100px;
     }
 
     .logoMM {
@@ -1267,10 +1419,26 @@
     
     .logoDA {
         background-image: url(../assets/logo_dam.png);
-        margin: 0 0px 0px -20px;
+        margin: 0 0px 0px -50px;
         width: 366px;
         height: 102px;
         transform: scale(0.7)
+    }
+
+    .logoMO {
+        background-image: url(../assets/logo_movie2m.png);
+        margin: 0 0px 0px 15px;
+        width: 331px;
+        height: 100px;
+        transform: scale(0.72)
+    }
+
+    .logoAM {
+        background-image: url(../assets/logo_amm.png);
+        margin: 0 0px 0px 34px;
+        width: 323px;
+        height: 100px;
+        transform: scale(0.74)
     }
 
     .presentationText2 {
@@ -1427,6 +1595,90 @@
         height: 72px;
         font-size: 25px;
         margin: -20px 0 40px 320px;
+        transform: scale(0.7);
+    }
+
+    .moviebox {
+        flex-direction: row;
+        height: 380px;
+    }
+
+    .movieboxLogoText {
+        display: flex;
+        flex-direction: column;
+        margin: 0 -45px 0 20px;
+    }
+
+    .movieboxLogo {
+        background-image: url(../assets/logo_moviem.png);
+        margin: 30px 0 20px 20px;
+        width: 550px;
+        transform: scale(0.7);
+        height: 120px;
+    }
+    
+    .movieboxText {
+        font-size: 30px;
+        line-height: 40px;
+        width: 1020px;
+        transform: scale(0.7);
+        margin: 0 0 30px -50px;
+    }
+
+    .movieboxVideoButton {
+        margin: 0px 0px 0px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movieboxButton {
+        width: 282px;
+        height: 72px;
+        font-size: 25px;
+        margin: 20px 0 10px -100px;
+        transform: scale(0.7);
+    }
+
+    .automailerbox {
+        flex-direction: row;
+        height: 380px;
+    }
+
+    .amboxLogoText {
+        display: flex;
+        flex-direction: column;
+        margin: 0 -45px 0 20px;
+    }
+
+    .amboxLogo {
+        background-image: url(../assets/logo_am2m.png);
+        margin: 30px 0 20px 40px;
+        width: 420px;
+        transform: scale(0.7);
+        height: 130px;
+    }
+    
+    .amboxText {
+        font-size: 30px;
+        line-height: 40px;
+        width: 1020px;
+        transform: scale(0.7);
+        margin: 0 0 30px -50px;
+    }
+
+    .amboxVideoButton {
+        margin: 0px 0px 0px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .amboxButton {
+        width: 282px;
+        height: 72px;
+        font-size: 25px;
+        margin: 30px 0 10px -100px;
         transform: scale(0.7);
     }
 
@@ -1617,11 +1869,12 @@
     .presentationLogos {
         display: flex;
         margin: 0px 0 0 -10px;
+        width: 1270px;
     }
 
     .logoMM {
         background-image: url(../assets/logo_mmm.png);
-        margin: 0 40px 0px 0px;
+        margin: 0 40px 20px 0px;
         width: 418px;
         height: 100px;
         transform: scale(0.8)
@@ -1642,13 +1895,29 @@
         height: 102px;
         transform: scale(0.8)
     }
+    
+    .logoMO {
+        background-image: url(../assets/logo_movie2m.png);
+        margin: 0 40px 0px 12px;
+        width: 331px;
+        height: 100px;
+        transform: scale(0.84)
+    }
+    
+    .logoAM {
+        background-image: url(../assets/logo_amm.png);
+        margin: 0 0px 0px 83px;
+        width: 323px;
+        height: 100px;
+        transform: scale(0.85)
+    }
 
     .presentationText2 {
         font-size: 30px;
         line-height: 33px;
         text-align: left;
         width: 1100px;
-        margin: 30px 0 130px -340px;
+        margin: 30px 0 130px -370px;
         transform: scale(0.75)
     }
 
@@ -1734,6 +2003,60 @@
 
     .daboxButton {
         margin: 0px 0 30px 410px;
+        transform: scale(0.7);
+    }
+
+    .moviebox {
+        height: 395px;
+    }
+
+    .movieboxLogoText {
+        margin: 0 90px 0 10px;
+    }
+
+    .movieboxLogo {
+        margin: 0px 0 30px -35px;
+        transform: scale(0.8);
+    }
+    
+    .movieboxText {
+        transform: scale(0.8);
+        margin: 0 0 0 -80px;
+    }
+
+    .movieboxVideoButton {
+        margin: 0px 0px 0px 10px;
+    }
+
+    .movieboxButton {
+        margin: 0px 0 -10px 30px;
+        transform: scale(0.7);
+    }
+
+    .automailerbox {
+        height: 395px;
+    }
+
+    .amboxLogoText {
+        margin: 0 90px 0 15px;
+    }
+
+    .amboxLogo {
+        margin: 0px 0 30px -35px;
+        transform: scale(0.8);
+    }
+    
+    .amboxText {
+        transform: scale(0.8);
+        margin: 0 0 0 -90px;
+    }
+
+    .amboxVideoButton {
+        margin: 0px 0px 0px 10px;
+    }
+
+    .amboxButton {
+        margin: 0px 0 0px 20px;
         transform: scale(0.7);
     }
 
@@ -1946,16 +2269,17 @@
     }
 
     .presentationText1 {
-        margin: 0 0 40px -600px;
+        margin: 0 0 40px -660px;
         transform: scale(1)
     }
 
     .presentationLogos {
         margin: 20px 0 20px -50px;
+        width: 1410px;
     }
 
     .logoMM {
-        margin: 0 120px 0px 0px;
+        margin: 0 120px 40px 0px;
         transform: scale(1)
     }
     
@@ -1967,6 +2291,16 @@
     .logoDA {
         margin: 0 0px 0px 0px;
         transform: scale(1)
+    }
+
+    .logoMO {
+        margin: 0 120px 0px 0px;
+        transform: scale(1.03)
+    }
+    
+    .logoAM {
+        margin: 0 0px 0px 87px;
+        transform: scale(1.03)
     }
 
     .presentationText2 {
@@ -2067,6 +2401,65 @@
 
     .daboxButton {
         margin: 0px 0 30px 460px;
+        transform: scale(1);
+    }
+
+    .moviebox {
+        height: 500px;
+    }
+
+    .movieboxLogoText {
+        margin: 0 170px 90px 70px;
+    }
+
+    .movieboxLogo {
+        margin: 0px 0 70px -30px;
+        transform: scale(1);
+    }
+    
+    .movieboxText {
+        transform: scale(1);
+        margin: 0 0 0 -30px;
+    }
+
+    .movieboxVideoButton {
+        margin: 0 0px 0 10px;
+    }
+    
+    .movieboxVideo {
+        margin: -100px 0 80px 0px;
+        transform: scale(1.15);
+    }
+
+    .movieboxButton {
+        margin: 0px 0 0px 100px;
+        transform: scale(1);
+    }
+
+    .automailerbox {
+        height: 500px;
+    }
+
+    .amboxLogoText {
+        margin: 0 170px 90px 70px;
+    }
+
+    .amboxLogo {
+        margin: 0px 0 70px -30px;
+        transform: scale(1);
+    }
+    
+    .amboxText {
+        transform: scale(1);
+        margin: 0 0 0 -30px;
+    }
+
+    .amboxVideoButton {
+        margin: 0 0px 0 10px;
+    }
+
+    .amboxButton {
+        margin: 0px 0 0px 100px;
         transform: scale(1);
     }
 
