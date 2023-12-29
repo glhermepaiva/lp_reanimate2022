@@ -1,11 +1,164 @@
 import styles from '../styles/Index.module.css'
 import ReactPlayer from 'react-player'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-import EmblaCarousel from '../components/EmblaCarousel'
+import { useRouter } from 'next/router'
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+
+import { register } from "swiper/element/bundle";
+
+register();
 
 export default function LandingPage() {
+
+    /***** PLANS  *****/
+
+    const [plansOpen, setPlansOpen] = useState(false)
+
+    const openPlans = () => {
+        if (plansOpen == false){
+        setPlansOpen(true)
+        } else {
+        setPlansOpen(false)
+        } 
+    }
+
+    /***** HAMBURGER MENU  *****/
+
+    const [menuOpen, setMenuOpen] = useState(false)
+
+    const openMenu = () => {
+        if (menuOpen == false){
+        setMenuOpen(true)
+        } else {
+        setMenuOpen(false)
+        } 
+    }
+
+    const closeMenu = () => {
+        setMenuOpen(false)
+    }
+
+    /***** BUTTON SHOW REEL *****/
+
+    const [reelOpen, setReelOpen] = useState(false)
+
+    const openReel = () => {
+    setReelOpen(true)
+    }
+
+    const closeReel = () => {
+    setReelOpen(false)
+    setMenuOpen(false)
+    }
+
+    /***** FAQ QUESTIONS *****/
+
+    const [question1Closed, setQuestion1Closed] = useState(true)
+    const [question2Closed, setQuestion2Closed] = useState(true)
+    const [question3Closed, setQuestion3Closed] = useState(true)
+
+    const openQuestion1 = () => {
+    setQuestion1Closed(false)
+    }
+
+    const closeQuestion1 = () => {
+    setQuestion1Closed(true)
+    }
+
+    const openQuestion2 = () => {
+    setQuestion2Closed(false)
+    }
+    
+    const closeQuestion2 = () => {
+    setQuestion2Closed(true)
+    }
+
+    const openQuestion3 = () => {
+    setQuestion3Closed(false)
+    }
+        
+    const closeQuestion3 = () => {
+    setQuestion3Closed(true)
+    }
+
+    /***** CREATE ACCOUNT *****/
+
+    const [createAccount, setCreateAccount] = useState(false)
+
+    const openCreateAccount = () => {
+        if (createAccount == false){
+            setCreateAccount(true)
+        } else {
+            setCreateAccount(false)
+        } 
+    }
+
+    const doubleFunction = () => {
+        closeReel();
+        openCreateAccount();
+    }
+
+    const router = useRouter();
+
+    const refresh = () => {
+        router.reload()
+    }
+
+    /***** PRICE SWITCH  *****/
+
+    const [div1ZIndex, setDiv1ZIndex] = useState(1);
+    const [div2ZIndex, setDiv2ZIndex] = useState(0);
+      
+    const swapZIndex = () => {
+        setDiv1ZIndex(div1ZIndex === 0 ? 1 : 0);
+        setDiv2ZIndex(div2ZIndex === 0 ? 1 : 0);
+    };
+
+    /***** PAGINATION *****/
+
+    const paginationRef = useRef(null);
+
+    useEffect(() => {
+    const swiperContainer = paginationRef.current;
+    const params = {
+        pagination: {
+        clickable: true
+        },
+        loop: true,
+        injectStyles: [
+        `
+            .swiper-wrapper {
+            width: 100vw;
+            height: 600px;
+            margin: 0px 0 20px 0;
+            }
+
+            .swiper-pagination {
+            margin: 0px 0 50px 0 !important;
+            } 
+
+            .swiper-pagination-bullet {
+                width: 27px;
+                height: 27px;
+                margin: 0px 10px !important;
+                background-color: #E8336A;
+            }
+        `,
+        ],
+    };
+
+    Object.assign(swiperContainer, params);
+    swiperContainer.initialize();
+    }, []);
+
+    /***** OTHER  *****/
 
     const [offsetY, setOffsetY] = useState(0);
 
@@ -134,19 +287,6 @@ export default function LandingPage() {
         window.open('https://www.reanimate.com.br/', "_self");
     }
 
-    const SLIDE_COUNT = 9;
-    const slides = Array.from(Array(SLIDE_COUNT).keys());
-
-    const [englishActive, setEnglishActive] = useState(false);
-
-    function changePTBR () {
-       setEnglishActive(false)
-    }
-
-    function changeENG () {
-        setEnglishActive(true)
-     }
-
     return (
         <div>
             <Head>
@@ -154,160 +294,591 @@ export default function LandingPage() {
                 <meta name='description' content='Transforme dias de trabalho em minutos com o re.animate.' />
             </Head>
 
-            <div className={styles.langButtonToPTBR} onClick={changePTBR} />
-            <div className={styles.langButtonToENG} onClick={changeENG} />
+        <div>
+            <div className={`${styles.hoverMenu} ${menuOpen ? styles.open : ''}`}>
+                <div className={styles.menuClose} onClick={closeMenu}/>
+                <div className={styles.reanimateLogoMenu} onClick={closeMenu} />
+                <div className={styles.menuLinks}>
+                    <div onClick={openReel}>Login</div>
+                    <div onClick={reanimLink}>Acesse o Re.animate</div>
+                </div>
+            </div>
+
+            {reelOpen ?
+            createAccount ?
+            <div className={styles.galleryModal}>
+                <div className={styles.modalClose} onClick={doubleFunction} />
+                <div className={styles.modalLogin}>
+                    {size.width < 720 ?
+                    <div className={styles.modalLoginTitle2}>Crie sua<br/> conta gratuita</div>
+                    :
+                    <div className={styles.modalLoginTitle2}>Crie sua conta gratuita</div>
+                    }
+                    <div className={styles.modalLoginGoogleButton}>
+                        <div className={styles.googleLogo} />
+                        <div className={styles.googleLogin}>Login com Google</div>
+                    </div>
+                    <div className={styles.modalLoginLineContainer}>
+                        <div className={styles.modalLoginLine1}></div>
+                        <div className={styles.modalLoginOuText}>OU</div>
+                    </div>                    
+                    <form className={styles.modalLoginForm}>
+                        <div className={styles.modalLoginFormDataInput}>Nome da empresa</div>
+                        <input className={styles.modalLoginFormInput} type="text" name="company" />
+                        <div className={styles.modalLoginFormDataInput}>Nome</div>
+                        <input className={styles.modalLoginFormInput} type="text" name="name" />
+                        <div className={styles.modalLoginFormDataInput}>Sobrenome</div>
+                        <input className={styles.modalLoginFormInput} type="text" name="surname" />
+                        <div className={styles.modalLoginFormDataInput}>E-Mail</div>
+                        <input className={styles.modalLoginFormInput} type="text" name="emailregister" />
+                        <div className={styles.modalLoginFormDataInput}>Password</div>
+                        <input className={styles.modalLoginFormInput} type="text" name="passwordregister" />
+                        <br/>
+                        <button className={styles.modalLoginFormRegisterButton}>Cadastrar</button>
+                    </form>
+                    <div className={styles.modalLoginLine2}></div>
+                    <div className={styles.modalLoginText2}>Ao criar sua conta, você aceita nossos<br/><div className={styles.modalLoginTextLink}>Termos de Serviço </div>
+                    e <div className={styles.modalLoginTextLink}>Política de Privacidade</div>.</div>
+                </div>
+            </div> 
+            :
+            <div className={styles.galleryModal}>
+                <div className={styles.modalClose} onClick={closeReel} />
+                <div className={styles.modalLogin}>
+                    <div className={styles.modalLoginTitle}>Faça login na sua conta</div>
+                    <div className={styles.modalLoginGoogleButton}>
+                        <div className={styles.googleLogo} />
+                        <div className={styles.googleLogin}>Login com Google</div>
+                    </div>
+                    <div className={styles.modalLoginLineContainer}>
+                        <div className={styles.modalLoginLine1}></div>
+                        <div className={styles.modalLoginOuText}>OU</div>
+                    </div>
+                    <form className={styles.modalLoginForm}>
+                        <div className={styles.modalLoginFormEmail}>E-Mail</div>
+                        <input className={styles.modalLoginFormEmailInput} type="text" name="email" />
+                        <div className={styles.modalLoginFormPassword}>Password</div>
+                        <input className={styles.modalLoginFormPasswordInput} type="text" name="password" />
+                        <br/>
+                        <div className={styles.modalLoginRememberContainer}>
+                            <input className={styles.modalLoginFormRememberInput} type="checkbox" name="remember" />
+                            <div className={styles.modalLoginFormRemember}>Remember Me</div>
+                        </div>
+                        <button className={styles.modalLoginFormLogInButton}>Log In</button>
+                        <div className={styles.modalLoginFormForgotPassword}>Esqueceu sua senha?</div>
+                    </form>
+                    <div className={styles.modalLoginLine2}></div>
+                    <div className={styles.modalLoginText}>Não tem uma conta? <div className={styles.modalLoginTextLink} onClick={openCreateAccount}>Crie seu login.</div></div>
+                </div>
+            </div> 
+            :
+            null}
+
+            {plansOpen ?
             
-            {englishActive ? 
+            <div>
+            <div className={styles.headerPlans}>
+                <div className={styles.reanimateLogoPlans} onClick={refresh} />
+                {size.width <= 1366 ?
+                    <div className={styles.hamburgerPlans} onClick={openMenu} />
+                :
+                    <button className={styles.accessReanimButton} onClick={reanimLink} >Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>
+                }
+            </div>
+            <div className={styles.carouselPlans}>
+                <div className={styles.rocketPlans} />
+                <div className={styles.baloonPlans} />
+                <div className={styles.cloud1Plans} />
+                <div className={styles.cloud2Plans} />
+                <div className={styles.cloud3Plans} />
+                <div className={styles.planePlans} />
+                <div className={styles.lightPlans} />
+                <div className={styles.cloud4Plans} />
+                <div className={styles.cloud5Plans} />
+                <div className={styles.cloud6Plans} />
+                {size.width >= 720 ?
+                    <Swiper initialSlide={1} slidesPerView={1.7} centeredSlides={true} className={styles.carouselCards} style={{height: '800px', margin: '-200px 0 0 0'}}>
+                    <SwiperSlide>
+                    <div className={styles.carouselCard}>
+                    <div className={styles.carouselContainerTitle2}>
+                        <div className={styles.carouselCardIconReanimate} />
+                            <div className={styles.carouselCardTitle}>Básico</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconUser} />
+                            <div className={styles.carouselCardText1}>6 acessos</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconPapers} />
+                            <div className={styles.carouselCardText1}>600 peças por mês</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconGallery} />
+                            <div className={styles.carouselCardText1}>Exportação</div>
+                            <div className={styles.carouselCardIconInformation} />
+                        </div>
+                        <div className={styles.carouselContainerPayOptions}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                            </div>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                            </div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardPriceBlack}>R$</div>
+                            <div className={styles.carouselCardPricePink}>999</div>
+                            <div className={styles.carouselCardPriceBlack}>99</div>
+                        </div>
+                        <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                            <div className={styles.carouselCardButton}>Escolher</div>
+                        </Link>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Master Motion</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Replicate</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Suporte padrão por e-mail</div>
+                            </div>
+                        </div>
+                    </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={styles.carouselTopChoice}>MAIS ESCOLHIDO</div>
+                        <div className={styles.carouselCardTopChoice}>
+                            <div className={styles.carouselContainerTitle}>
+                                <div className={styles.carouselCardIconReanimate} />
+                                <div className={styles.carouselCardTitle}>Premium</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconUser} />
+                                <div className={styles.carouselCardText1}>Acessos Ilimitados</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconPapers} />
+                                <div className={styles.carouselCardText1}>2.500 peças por mês</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconGallery} />
+                                <div className={styles.carouselCardText1}>Exportação</div>
+                                <div className={styles.carouselCardIconInformation} />
+                            </div>
+
+                            <div className={styles.carouselContainerPayOptions}>
+                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                    <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                                </div>
+                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                    <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                                </div>
+                            </div>
+
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardPriceBlack}>R$</div>
+                                <div className={styles.carouselCardPricePink}>999</div>
+                                <div className={styles.carouselCardPriceBlack}>99</div>
+                            </div>
+                            <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                                <div className={styles.carouselCardButton}>Escolher</div>
+                            </Link>
+                            <div>
+                                <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Master Motion</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Replicate</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Suporte premium por e-mail</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Chatbot</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Chat</div>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <div className={styles.carouselCard}>
+                    <div className={styles.carouselContainerTitle2}>
+                        <div className={styles.carouselCardIconReanimate} />
+                            <div className={styles.carouselCardTitle}>Avançado</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconUser} />
+                            <div className={styles.carouselCardText1}>10 acessos</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconPapers} />
+                            <div className={styles.carouselCardText1}>1.500 peças por mês</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconGallery} />
+                            <div className={styles.carouselCardText1}>Exportação</div>
+                            <div className={styles.carouselCardIconInformation} />
+                        </div>
+                        <div className={styles.carouselContainerPayOptions}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                            </div>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                            </div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardPriceBlack}>R$</div>
+                            <div className={styles.carouselCardPricePink}>999</div>
+                            <div className={styles.carouselCardPriceBlack}>99</div>
+                        </div>
+                        <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                            <div className={styles.carouselCardButton}>Escolher</div>
+                        </Link>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Master Motion</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Replicate</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Suporte prioritário por e-mail</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Chatbot</div>
+                            </div>
+                        </div>
+                    </div>
+                    </SwiperSlide>
+                </Swiper>
+                :
+                <Swiper pagination={true} modules={[Pagination]} initialSlide={1} loop={true} className={styles.carouselCards}>
+                    <SwiperSlide>
+                    <div className={styles.carouselCard}>
+                    <div className={styles.carouselContainerTitle2}>
+                        <div className={styles.carouselCardIconReanimate} />
+                            <div className={styles.carouselCardTitle}>Básico</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconUser} />
+                            <div className={styles.carouselCardText1}>6 acessos</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconPapers} />
+                            <div className={styles.carouselCardText1}>600 peças por mês</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconGallery} />
+                            <div className={styles.carouselCardText1}>Exportação</div>
+                            <div className={styles.carouselCardIconInformation} />
+                        </div>
+                        <div className={styles.carouselContainerPayOptions}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                            </div>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                            </div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardPriceBlack}>R$</div>
+                            <div className={styles.carouselCardPricePink}>999</div>
+                            <div className={styles.carouselCardPriceBlack}>99</div>
+                        </div>
+                        <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                            <div className={styles.carouselCardButton}>Escolher</div>
+                        </Link>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Master Motion</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Replicate</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Suporte padrão por e-mail</div>
+                            </div>
+                        </div>
+                    </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={styles.carouselTopChoice}>MAIS ESCOLHIDO</div>
+                        <div className={styles.carouselCardTopChoice}>
+                            <div className={styles.carouselContainerTitle}>
+                                <div className={styles.carouselCardIconReanimate} />
+                                <div className={styles.carouselCardTitle}>Premium</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconUser} />
+                                <div className={styles.carouselCardText1}>Acessos Ilimitados</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconPapers} />
+                                <div className={styles.carouselCardText1}>2.500 peças por mês</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconGallery} />
+                                <div className={styles.carouselCardText1}>Exportação</div>
+                                <div className={styles.carouselCardIconInformation} />
+                            </div>
+
+                            <div className={styles.carouselContainerPayOptions}>
+                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                    <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                                </div>
+                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                    <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                                </div>
+                            </div>
+
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardPriceBlack}>R$</div>
+                                <div className={styles.carouselCardPricePink}>999</div>
+                                <div className={styles.carouselCardPriceBlack}>99</div>
+                            </div>
+                            <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                                <div className={styles.carouselCardButton}>Escolher</div>
+                            </Link>
+                            <div>
+                                <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Master Motion</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Replicate</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Suporte premium por e-mail</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Chatbot</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Chat</div>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <div className={styles.carouselCard}>
+                    <div className={styles.carouselContainerTitle2}>
+                        <div className={styles.carouselCardIconReanimate} />
+                            <div className={styles.carouselCardTitle}>Avançado</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconUser} />
+                            <div className={styles.carouselCardText1}>10 acessos</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconPapers} />
+                            <div className={styles.carouselCardText1}>1.500 peças por mês</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconGallery} />
+                            <div className={styles.carouselCardText1}>Exportação</div>
+                            <div className={styles.carouselCardIconInformation} />
+                        </div>
+                        <div className={styles.carouselContainerPayOptions}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                            </div>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                            </div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardPriceBlack}>R$</div>
+                            <div className={styles.carouselCardPricePink}>999</div>
+                            <div className={styles.carouselCardPriceBlack}>99</div>
+                        </div>
+                        <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                            <div className={styles.carouselCardButton}>Escolher</div>
+                        </Link>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Master Motion</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Replicate</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Suporte prioritário por e-mail</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Chatbot</div>
+                            </div>
+                        </div>
+                    </div>
+                    </SwiperSlide>
+                </Swiper>
+                }
+                
+            </div>
+            <div className={styles.businessPlanContainer}>
+                {size.width < 720 ?
+                    <div className={styles.businessPlanContainerTitle}>Planos<br/> para negócios</div>
+                :
+                    <div className={styles.businessPlanContainerTitle}>Planos para negócios</div>
+                }
+                <div className={styles.businessPlanContainerText}>Plano empresarial personalizado para grandes empresas com necessidades específicas, oferecendo suporte dedicado e personalização avançada.</div>
+                <div className={styles.businessPlanContainerLink}>Ver planos para negócios →</div>
+            </div>
+            <div className={styles.paymentOptions}>
+                <div className={styles.paymentOptionsTitleContainer}>
+                    <div className={styles.paymentOptionsTitle}>MÉTODOS DE PAGAMENTO ACEITOS</div>
+                    <div className={styles.paymentOptionsCC} />
+                </div>
+                <div className={styles.paymentOptionsContainer}>
+                    <div className={styles.paymentOptionsLine1} />
+                    <div className={styles.paymentOptionsApprovalIcon} />
+                    <div className={styles.paymentOptionsTestText}>TESTE GRATUITO</div>
+                    <div className={styles.paymentOptionsLine2} />
+                    <div className={styles.paymentOptionsSecurityIcon} />
+                    <div className={styles.paymentOptionsPaymentText}>PAGAMENTO SEGURO SSL</div>
+                </div>
+            </div>
+            <div className={styles.faq}>
+                <div className={styles.faqTitle}>Perguntas frequentes</div>
+                <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou <div className={styles.faqContact}>entre em contato</div>.</div>
+                <div>
+                    <div className={styles.faqLine} />
+                    {question1Closed ?
+                    <div className={styles.faqQuestion}>
+                        <div className={styles.faqQuestionTop} onClick={openQuestion1}>
+                            <div className={styles.faqQuestionTitle}>O que é um plano Premium?</div>
+                            <div className={styles.faqQuestionArrowDown} />
+                        </div>
+                    </div>
+                    :
+                    <div className={styles.faqQuestion}>
+                        <div className={styles.faqQuestionTop} onClick={closeQuestion1}>
+                            <div className={styles.faqQuestionTitle}>O que é um plano Premium?</div>
+                            <div className={styles.faqQuestionArrowUp} />
+                        </div>
+                        <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
+                    </div>
+                    }
+                    
+                    <div className={styles.faqLine} />
+                    {question2Closed ?
+                    <div className={styles.faqQuestion}>
+                        <div className={styles.faqQuestionTop} onClick={openQuestion2}>
+                            <div className={styles.faqQuestionTitle}>Posso experimentar um plano Premium gratuitamente?</div>
+                            <div className={styles.faqQuestionArrowDown} />
+                        </div>
+                    </div>
+                    :
+                    <div className={styles.faqQuestion}>
+                        <div className={styles.faqQuestionTop} onClick={closeQuestion2}>
+                            <div className={styles.faqQuestionTitle}>Posso experimentar um plano Premium gratuitamente?</div>
+                            <div className={styles.faqQuestionArrowUp} />
+                        </div>
+                        <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
+                    </div>
+                    }
+                    
+                    <div className={styles.faqLine} />
+                    {question3Closed ?
+                    <div className={styles.faqQuestion}>
+                        <div className={styles.faqQuestionTop} onClick={openQuestion3}>
+                            <div className={styles.faqQuestionTitle}>Quais métodos de pagamento online são aceitos?</div>
+                            <div className={styles.faqQuestionArrowDown} />
+                        </div>
+                    </div>
+                    :
+                    <div className={styles.faqQuestion}>
+                        <div className={styles.faqQuestionTop} onClick={closeQuestion3}>
+                            <div className={styles.faqQuestionTitle}>Quais métodos de pagamento online são aceitos?</div>
+                            <div className={styles.faqQuestionArrowUp} />
+                        </div>
+                        <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
+                    </div>
+                    }
+                    <div className={styles.faqLine} />
+                </div>
+            </div>
+            <div className={styles.footer}>
+                <div className={styles.footerText}>©2023 PointMedia</div>
+                <div className={styles.footerSocialMedia}>
+                    <div className={styles.footerIconFb} onClick={fbLink} />
+                    <div className={styles.footerIconInsta} onClick={instaLink} />
+                    <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
+                </div>
+                <Link href="/form?uri=" as={"/form"} passHref>
+                    <button className={styles.footerButton}>Começe agora <span className={styles.footerButtonArrow} /></button>
+                </Link>
+            </div>
+            </div>
+
+            :
 
             <div>
             <div className={styles.header}>
-            <div className={styles.headerImages}>
-                <div className={styles.reanimateLogo} />
-                <button className={styles.accessReanimButton} onClick={reanimLink} >Go to re.animate <div className={styles.accessReanimButtonArrow} /></button>
-                <div className={styles.drawingGirl} >
-                    {renderObjectSize()}
-                </div>
-            </div>
-                <div className={styles.headerTitle}>Turn days of work into minutes with <span className={styles.headerTitleReanimate}>re.animate.</span></div>
-                <div className={styles.headerText}>The automation platform that will revolutionize your digital banner production.</div>
-                <Link href="/formen?uri=" as={"/formen"} passHref>
-                    <button className={styles.headerButton}>TRY IT NOW!<div className={styles.headerButtonArrow} /></button>
-                </Link>   
-                {/* <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div> */}
-        </div>
-        <div className={styles.advantages}>
-            <div className={styles.qualityBox}>
-                <div className={styles.symbolCheck} />
-                <div className={styles.checkTitle}>More Quality</div>
-                <div className={styles.checkText}>Replicate your design template in various formats, both animated and static.</div>
-            </div>
-            <div className={styles.agilityBox}>
-                <div className={styles.symbolClock} />
-                <div className={styles.clockTitle}>More Agility</div>
-                <div className={styles.clockText}> Have an entire advertising campaign in your hands in just a few clicks.</div>
-            </div>
-            <div className={styles.escalabilityBox}>
-                <div className={styles.symbolBoxes} />
-                <div className={styles.boxesTitle}>More scalability</div>
-                <div className={styles.boxesText}>Create thousands of digital banners from one.</div>
-            </div>
-        </div>
-        <div className={styles.presentation}>
-            <div className={styles.presentationTitle}>Revolutionize your operation!</div>
-            <div className={styles.presentationText1}><b>re.animate</b> is divided into five features:</div>
-            <div className={styles.presentationLogos}>
-                <div className={styles.logoMM} />
-                <div className={styles.logoRA} />
-                <div className={styles.logoDA} />
-                <div className={styles.logoMO} />
-                <div className={styles.logoAM} />
-            </div>
-            <div className={styles.presentationText2}>Five programs that will bring automation to your banner production line.</div>
-        </div>
-        <div className={styles.mastermotionbox}>
-            <div className={styles.mmboxLogoText}>
-                <div className={styles.mmboxLogo} />
-                <div className={styles.mmboxText}>It&apos;s never been so easy to create animated banners. Utilizing your Key Visual, you can create HTML5 animated banners without the need to know CSS or JavaScript.</div>
-            </div>
-            <div className={styles.mmboxVideoButton}>
-                <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
-                <Link href="/formen?uri=" as={"/formen"} passHref>
-                    <button className={styles.mmboxButton}>TRY IT NOW!<div className={styles.mmboxButtonArrow} /></button>
-                </Link>
-            </div>
-        </div>
-        <div className={styles.blankSpace}></div>
-        <div className={styles.replicateadsbox}>
-            <div className={styles.raboxLogoText}>
-                <div className={styles.raboxLogo} />
-                <div className={styles.raboxText}>The perfect format for your needs. Unfold your design template, animated by the first module, in different formats and media specifications: vertical, horizontal, square and mobile.</div>
-            </div>
-            <div className={styles.raboxVideoButton}>
-                <div className={styles.raboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=F6nh2AEccgI"/></div>
-                <Link href="/formen?uri=" as={"/formen"} passHref>
-                    <button className={styles.raboxButton}>TRY IT NOW!<div className={styles.raboxButtonArrow} /></button>
-                </Link>
-            </div>
-        </div>
-        <div className={styles.blankSpace}></div>
-        <div className={styles.dynamicadsbox}>
-            <div className={styles.daboxLogoText}>
-                <div className={styles.daboxLogo} />
-                <div className={styles.daboxText}>Having lots of products and offers to promote is no longer a headache. Easily create multiple variations of dynamic content.</div>
-            </div>
-            <div className={styles.daboxVideoButton}>
-                <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
-                <Link href="/formen?uri=" as={"/formen"} passHref>
-                    <button className={styles.daboxButton}>TRY IT NOW!<div className={styles.daboxButtonArrow} /></button>
-                </Link>
-            </div>
-        </div>
-        <div className={styles.blankSpace}></div>
-        <div className={styles.moviebox}>
-            <div className={styles.movieboxLogoText}>
-                <div className={styles.movieboxLogo} />
-                <div className={styles.movieboxText}>With &quot;Re.Animate to Movie&quot; you can turn your projects (.REAN files) into video files (.MP4) and GIFs. That way you have all the formats you need to make your campaing very complete.</div>
-            </div>
-            <div className={styles.movieboxVideoButton}>
-                <Link href="/formen?uri=" as={"/formen"} passHref>
-                    <button className={styles.movieboxButton}>TRY IT NOW!<div className={styles.movieboxButtonArrow} /></button>
-                </Link>
-            </div>
-        </div>
-        <div className={styles.blankSpace}></div>
-        <div className={styles.automailerbox}>
-            <div className={styles.amboxLogoText}>
-                <div className={styles.amboxLogo} />
-                <div className={styles.amboxText}>Your operation way more agile with a tool that allows for an optimized e-mail marketing production with just a few clicks.</div>
-            </div>
-            <div className={styles.amboxVideoButton}>
-                <Link href="/formen?uri=" as={"/formen"} passHref>
-                    <button className={styles.amboxButton}>TRY IT NOW!<div className={styles.amboxButtonArrow} /></button>
-                </Link>
-            </div>
-        </div>
-        <div className={styles.blankSpace}></div>
-        <div className={styles.about}>
-            <div className={styles.aboutBG} />
-            <div className={styles.aboutTitle}><span className={styles.aboutTitleReanimate}>re.animate</span> is a Point Media solution.</div>
-            <div className={styles.aboutArrowRight} />
-            <div className={styles.aboutText}>Founded in 2017, Point Media specializes in helping companies overcome the challenges of digital transformation. We operate in processes such as online media, digital production and Martech solutions so that our customers&apos; communication can be increasingly assertive within a constantly evolving market. <br/><br/>Learn also about our solutions for DCO, Media Control and ADOPs.</div>
-            <div className={styles.aboutArrowLeft} />
-        </div>
-        <div className={styles.carousel}>
-            <div className={styles.carouselTitle}>Our clients:</div>
-            <EmblaCarousel slides={slides} />
-        </div>
-        <div className={styles.footer}>
-            <div className={styles.footerText}>©2022 PointMedia</div>
-            <div className={styles.footerSocialMedia}>
-                <div className={styles.footerIconFb} onClick={fbLink} />
-                <div className={styles.footerIconInsta} onClick={instaLink} />
-                <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
-            </div>
-            <Link href="/formen?uri=" as={"/formen"} passHref>
-                <button className={styles.footerButton}>TRY IT NOW! <span className={styles.footerButtonArrow} /></button>
-            </Link>
-        </div>
-        </div>
-
-        : 
-
-        <div>
-        <div className={styles.header}>
                 <div className={styles.headerImages}>
-                    <div className={styles.reanimateLogo} />
+                    <div className={styles.reanimateLogo} onClick={refresh} />
+                    {size.width <= 1366 ?
+                    <div className={styles.hamburger} onClick={openMenu} />
+                    :
                     <button className={styles.accessReanimButton} onClick={reanimLink} >Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>
+                    }
                     <div className={styles.drawingGirl} >
                         {renderObjectSize()}
                     </div>
                 </div>
                     <div className={styles.headerTitle}>Transforme dias de trabalho em minutos com o <span className={styles.headerTitleReanimate}>re.animate.</span></div>
                     <div className={styles.headerText}>A plataforma de automação que vai revolucionar sua produção de banners digitais.</div>
-                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
-                        <button className={styles.headerButton}>Contrate agora <div className={styles.headerButtonArrow} /></button>
-                    </Link>
-                    {/* <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div> */}
+                    <button className={styles.headerButton} onClick={openPlans}>Contrate agora <div className={styles.headerButtonArrow} /></button>
             </div>
             <div className={styles.advantages}>
                 <div className={styles.qualityBox}>
@@ -328,15 +899,13 @@ export default function LandingPage() {
             </div>
             <div className={styles.presentation}>
                 <div className={styles.presentationTitle}>Revolucione a sua operação!</div>
-                <div className={styles.presentationText1}>O <b>re.animate</b> é dividido em cinco módulos:</div>
+                <div className={styles.presentationText1}>O <b>re.animate</b> é dividido em três módulos:</div>
                 <div className={styles.presentationLogos}>
                     <div className={styles.logoMM} />
                     <div className={styles.logoRA} />
                     <div className={styles.logoDA} />
-                    <div className={styles.logoMO} />
-                    <div className={styles.logoAM} />
                 </div>
-                <div className={styles.presentationText2}>Cinco programas que vão trazer automação a sua linha de produção de banners.</div>
+                <div className={styles.presentationText2}>Três programas que vão trazer automação a sua linha de produção de banners.</div>
             </div>
             <div className={styles.mastermotionbox}>
                 <div className={styles.mmboxLogoText}>
@@ -345,7 +914,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.mmboxVideoButton}>
                     <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
-                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
+                    <Link href="/form?uri=" as={"/form"} passHref>
                         <button className={styles.mmboxButton}>Contrate agora<div className={styles.mmboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -358,7 +927,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.raboxVideoButton}>
                     <div className={styles.raboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=F6nh2AEccgI"/></div>
-                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
+                    <Link href="/form?uri=" as={"/form"} passHref>
                         <button className={styles.raboxButton}>Contrate agora<div className={styles.raboxButtonArrow} /></button>
                     </Link>
                 </div>
@@ -371,32 +940,8 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.daboxVideoButton}>
                     <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
-                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
+                    <Link href="/form?uri=" as={"/form"} passHref>
                         <button className={styles.daboxButton}>Contrate agora<div className={styles.daboxButtonArrow} /></button>
-                    </Link>
-                </div>
-            </div>
-            <div className={styles.blankSpace}></div>
-            <div className={styles.moviebox}>
-                <div className={styles.movieLogoText}>
-                    <div className={styles.movieboxLogo} />
-                    <div className={styles.movieboxText}>Com o “Re.Animate to Movie”, você consegue transformar seus projetos (arquivos .REAN) em arquivos de vídeo (.MP4) e GIFs. Assim, você conta com todos os formatos que precisa para deixar sua campanha pra lá de completa.</div>
-                </div>
-                <div className={styles.movieboxVideoButton}>
-                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
-                        <button className={styles.movieboxButton}>Contrate agora<div className={styles.movieboxButtonArrow} /></button>
-                    </Link>
-                </div>
-            </div>
-            <div className={styles.blankSpace}></div>
-            <div className={styles.automailerbox}>
-                <div className={styles.amLogoText}>
-                    <div className={styles.amboxLogo} />
-                    <div className={styles.amboxText}>Sua operação muito mais ágil com uma ferramenta que permite a produção otimizada de e-mail marketing em poucos cliques.</div>
-                </div>
-                <div className={styles.amboxVideoButton}>
-                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
-                        <button className={styles.amboxButton}>Contrate agora<div className={styles.amboxButtonArrow} /></button>
                     </Link>
                 </div>
             </div>
@@ -410,23 +955,38 @@ export default function LandingPage() {
             </div>
             <div className={styles.carousel}>
                 <div className={styles.carouselTitle}>Nossos clientes:</div>
-                <EmblaCarousel slides={slides} />
+                <swiper-container ref={paginationRef} init="false">
+                    <SwiperSlide>
+                        <div className={styles.client1} />
+                        <div className={styles.client2} />
+                        <div className={styles.client3} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={styles.client4} />
+                        <div className={styles.client5} />
+                        <div className={styles.client6} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={styles.client7} />
+                        <div className={styles.client8} />
+                        <div className={styles.client9} />
+                    </SwiperSlide>
+                </swiper-container>    
             </div>
             <div className={styles.footer}>
-                <div className={styles.footerText}>©2022 PointMedia</div>
+                <div className={styles.footerText}>©2023 PointMedia</div>
                 <div className={styles.footerSocialMedia}>
                     <div className={styles.footerIconFb} onClick={fbLink} />
                     <div className={styles.footerIconInsta} onClick={instaLink} />
                     <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
                 </div>
-                <Link href="/formbr?uri=" as={"/formbr"} passHref>
-                    <button className={styles.footerButton}>Contrate agora <span className={styles.footerButtonArrow} /></button>
+                <Link href="/form?uri=" as={"/form"} passHref>
+                    <button className={styles.footerButton}>Começe agora <span className={styles.footerButtonArrow} /></button>
                 </Link>
             </div>
-            </div>
-
-        }
-            
         </div>
+            }     
+        </div>
+    </div>
     )
 }

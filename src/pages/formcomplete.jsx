@@ -2,7 +2,7 @@ import styles from '../styles/formcomplete.module.css'
 import Link from 'next/link'
 import Head from 'next/head'
 
-const FormCompleteBR = () => {
+const FormComplete = () => {
 
     return (
         <div className={styles.formBG}>
@@ -20,4 +20,4 @@ const FormCompleteBR = () => {
     )
 }
 
-export default FormCompleteBR;
+export default FormComplete;

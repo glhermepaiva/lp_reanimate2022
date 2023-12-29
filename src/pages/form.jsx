@@ -5,14 +5,14 @@ import * as yup from 'yup'
 import emailjs from 'emailjs-com'
 import { useState } from 'react'
 
-const FormEN = () => {
+const Form = () => {
 
     const schema = yup.object().shape({
-        name: yup.string().required(`Name field can't be empty`),
-        email: yup.string().email('Invalid email address').required(`Email field can't be empty`),
+        name: yup.string().required('Nome não pode estar em branco'),
+        email: yup.string().email('Endereço de email inválido').required('Email não pode estar em branco'),
         agency: yup.string(),
-        tel: yup.number().min(11, 'Phone must have at least 11 numbers').required(`Phone field can't be empty`),
-        message: yup.string().min(3, 'Message field must have at least 3 characters').max(300, 'Message field should have 300 characters maximum').required(`Message field can't be empty`)
+        tel: yup.number().min(11, 'O telefone precisa ter no mínimo 11 números').required('Telefone não pode estar em branco'),
+        message: yup.string().min(3, 'A mensagem deve ter no mínimo 3 caracteres').max(300, 'A mensagem pode ter no máximo 300 caracteres').required('Mensagem não pode estar em branco')
     })
 
     const [loading, setLoading] = useState(false)
@@ -37,7 +37,7 @@ const FormEN = () => {
 
             .then((result) => {
                 console.log(result);
-                window.location.href = "/formcompleteen";
+                window.location.href = "/formcomplete";
             }, (error) => {
                 console.log(error);
                 setLoading(false)
@@ -45,7 +45,7 @@ const FormEN = () => {
 
             
         } else {
-            alert("Please make sure all fields were correctly filled and try again.")
+            alert("Por favor garanta que os campos foram preenchidos corretamente e tente novamente.")
             setLoading(false)
         }
         }
@@ -53,25 +53,25 @@ const FormEN = () => {
     return (
         <div className={styles.formBG} >
             <Head>
-                <title>Form | re.animate</title>
+                <title>Formulário | re.animate</title>
             </Head>
             <div className={styles.formContainer}>
                 <Link href="/?uri=" as={"/"} passHref>
                     <span className={styles.formButtonClose} />
                 </Link>
-                {loading ? <div className={styles.formLoading}>Loading...</div> : <div className={styles.formPage}>
+                {loading ? <div className={styles.formLoading}>Carregando...</div> : <div className={styles.formPage}>
                 <div className={styles.formLeftSide}>
-                    <div className={styles.formTitle}>Book your demo!</div>
-                    <div className={styles.formText}>Tell us about yourself and how we can help you.</div>
+                    <div className={styles.formTitle}>Agende sua demo!</div>
+                    <div className={styles.formText}>Nos conte um pouco sobre você e como podemos te ajudar.</div>
                 </div>
                 <div className={styles.formRightSide}>
                     <form className={styles.formFields} onSubmit={onSubmit}>
-                        <input className={styles.formFieldName} type="text" name="name" placeholder="Name" />
+                        <input className={styles.formFieldName} type="text" name="name" placeholder="Nome" />
                         <input className={styles.formFieldEmail} type="text" name="email" placeholder="E-mail" />
-                        <input className={styles.formFieldAgency} type="text" name="agency" placeholder="Company name" />
-                        <input className={styles.formFieldPhone} type="text" name="phone" placeholder="Phone number" />
-                        <textarea className={styles.formFieldMessage} type="textarea" name="message" placeholder="Your message" />
-                        <button className={styles.formButton}>SEND MESSAGE<span className={styles.formButtonArrow} /></button>
+                        <input className={styles.formFieldAgency} type="text" name="agency" placeholder="Agência/Produtora" />
+                        <input className={styles.formFieldPhone} type="text" name="phone" placeholder="Telefone" />
+                        <textarea className={styles.formFieldMessage} type="textarea" name="message" placeholder="Mensagem" />
+                        <button className={styles.formButton}>Enviar <span className={styles.formButtonArrow} /></button>
                     </form>
                 </div>
                 </div>}
@@ -80,4 +80,4 @@ const FormEN = () => {
     )
 }
 
-export default FormEN;
+export default Form;
