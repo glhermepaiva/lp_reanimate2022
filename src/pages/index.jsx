@@ -24,6 +24,7 @@ export default function LandingPage() {
     const openPlans = () => {
         if (plansOpen == false){
         setPlansOpen(true)
+        window.scrollTo(0, 0)
         } else {
         setPlansOpen(false)
         } 
@@ -296,8 +297,10 @@ export default function LandingPage() {
 
         <div>
             <div className={`${styles.hoverMenu} ${menuOpen ? styles.open : ''}`}>
-                <div className={styles.menuClose} onClick={closeMenu}/>
-                <div className={styles.reanimateLogoMenu} onClick={closeMenu} />
+                <div className={styles.hoverLogoClose}>
+                    <div className={styles.reanimateLogoMenu} onClick={closeMenu} />
+                    <div className={styles.menuClose} onClick={closeMenu}/>
+                </div>
                 <div className={styles.menuLinks}>
                     <div onClick={openReel}>Login</div>
                     <div onClick={reanimLink}>Acesse o Re.animate</div>
@@ -325,10 +328,25 @@ export default function LandingPage() {
                     <form className={styles.modalLoginForm}>
                         <div className={styles.modalLoginFormDataInput}>Nome da empresa</div>
                         <input className={styles.modalLoginFormInput} type="text" name="company" />
-                        <div className={styles.modalLoginFormDataInput}>Nome</div>
-                        <input className={styles.modalLoginFormInput} type="text" name="name" />
-                        <div className={styles.modalLoginFormDataInput}>Sobrenome</div>
-                        <input className={styles.modalLoginFormInput} type="text" name="surname" />
+                        {size.width >= 720 ?
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <div>
+                                <div className={styles.modalLoginFormDataInput}>Nome</div>
+                                <input className={styles.modalLoginFormInput} type="text" name="name" style={{width: '228px'}} />
+                            </div>
+                            <div>
+                                <div v className={styles.modalLoginFormDataInput}>Sobrenome</div>
+                                <input className={styles.modalLoginFormInput} type="text" name="surname" style={{width: '228px'}} />
+                            </div>
+                        </div>
+                        :
+                        <div>
+                            <div className={styles.modalLoginFormDataInput}>Nome</div>
+                            <input className={styles.modalLoginFormInput} type="text" name="name" />
+                            <div className={styles.modalLoginFormDataInput}>Sobrenome</div>
+                            <input className={styles.modalLoginFormInput} type="text" name="surname" />
+                        </div>
+                        }
                         <div className={styles.modalLoginFormDataInput}>E-Mail</div>
                         <input className={styles.modalLoginFormInput} type="text" name="emailregister" />
                         <div className={styles.modalLoginFormDataInput}>Password</div>
@@ -397,7 +415,7 @@ export default function LandingPage() {
                 <div className={styles.cloud5Plans} />
                 <div className={styles.cloud6Plans} />
                 {size.width >= 720 ?
-                    <Swiper initialSlide={1} slidesPerView={1.7} centeredSlides={true} className={styles.carouselCards} style={{height: '800px', margin: '-200px 0 0 0'}}>
+                    <Swiper initialSlide={1} slidesPerView={1.85} centeredSlides={true} className={styles.carouselCards} style={{height: '800px', margin: '-200px 0 0 0'}}>
                     <SwiperSlide>
                     <div className={styles.carouselCard}>
                     <div className={styles.carouselContainerTitle2}>
@@ -772,7 +790,9 @@ export default function LandingPage() {
                     <div className={styles.businessPlanContainerTitle}>Planos para negócios</div>
                 }
                 <div className={styles.businessPlanContainerText}>Plano empresarial personalizado para grandes empresas com necessidades específicas, oferecendo suporte dedicado e personalização avançada.</div>
-                <div className={styles.businessPlanContainerLink}>Ver planos para negócios →</div>
+                <Link href="/form?uri=" as={"/form"} passHref>
+                    <div className={styles.businessPlanContainerLink}>Ver planos para negócios →</div>
+                </Link>
             </div>
             <div className={styles.paymentOptions}>
                 <div className={styles.paymentOptionsTitleContainer}>
@@ -790,7 +810,11 @@ export default function LandingPage() {
             </div>
             <div className={styles.faq}>
                 <div className={styles.faqTitle}>Perguntas frequentes</div>
-                <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou <div className={styles.faqContact}>entre em contato</div>.</div>
+                <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou 
+                    <Link href="/form?uri=" as={"/form"} passHref>
+                    <div className={styles.faqContact}> entre em contato</div>
+                    </Link>
+                .</div>
                 <div>
                     <div className={styles.faqLine} />
                     {question1Closed ?
@@ -855,9 +879,6 @@ export default function LandingPage() {
                     <div className={styles.footerIconInsta} onClick={instaLink} />
                     <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
                 </div>
-                <Link href="/form?uri=" as={"/form"} passHref>
-                    <button className={styles.footerButton}>Começe agora <span className={styles.footerButtonArrow} /></button>
-                </Link>
             </div>
             </div>
 
@@ -865,13 +886,15 @@ export default function LandingPage() {
 
             <div>
             <div className={styles.header}>
-                <div className={styles.headerImages}>
+                <div className={styles.headerLogoHamb}>
                     <div className={styles.reanimateLogo} onClick={refresh} />
                     {size.width <= 1366 ?
                     <div className={styles.hamburger} onClick={openMenu} />
                     :
                     <button className={styles.accessReanimButton} onClick={reanimLink} >Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>
-                    }
+                }
+                </div>
+                <div className={styles.headerImages}>
                     <div className={styles.drawingGirl} >
                         {renderObjectSize()}
                     </div>
@@ -914,9 +937,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.mmboxVideoButton}>
                     <div className={styles.mmboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=SM87-7F03wQ"/></div>
-                    <Link href="/form?uri=" as={"/form"} passHref>
-                        <button className={styles.mmboxButton}>Contrate agora<div className={styles.mmboxButtonArrow} /></button>
-                    </Link>
+                    <button className={styles.mmboxButton} onClick={openPlans}>Contrate agora<div className={styles.mmboxButtonArrow} /></button>
                 </div>
             </div>
             <div className={styles.blankSpace}></div>
@@ -927,9 +948,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.raboxVideoButton}>
                     <div className={styles.raboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=F6nh2AEccgI"/></div>
-                    <Link href="/form?uri=" as={"/form"} passHref>
-                        <button className={styles.raboxButton}>Contrate agora<div className={styles.raboxButtonArrow} /></button>
-                    </Link>
+                    <button className={styles.raboxButton} onClick={openPlans}>Contrate agora<div className={styles.raboxButtonArrow} /></button>
                 </div>
             </div>
             <div className={styles.blankSpace}></div>
@@ -940,9 +959,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.daboxVideoButton}>
                     <div className={styles.daboxVideo}><ReactPlayer url="https://www.youtube.com/watch?v=Db2IkF4MmX8"/></div>
-                    <Link href="/form?uri=" as={"/form"} passHref>
-                        <button className={styles.daboxButton}>Contrate agora<div className={styles.daboxButtonArrow} /></button>
-                    </Link>
+                    <button className={styles.daboxButton} onClick={openPlans}>Contrate agora<div className={styles.daboxButtonArrow} /></button>
                 </div>
             </div>
             <div className={styles.blankSpace}></div>
@@ -980,9 +997,7 @@ export default function LandingPage() {
                     <div className={styles.footerIconInsta} onClick={instaLink} />
                     <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
                 </div>
-                <Link href="/form?uri=" as={"/form"} passHref>
-                    <button className={styles.footerButton}>Começe agora <span className={styles.footerButtonArrow} /></button>
-                </Link>
+                <button className={styles.footerButton} onClick={openPlans}>Começe agora <span className={styles.footerButtonArrow} /></button>
             </div>
         </div>
             }     

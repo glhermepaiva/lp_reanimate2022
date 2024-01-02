@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     height: 100vh;
+    background-color: #b4b4b4;
 }
 
 .formContainer {
@@ -13,6 +14,8 @@
     margin-top: 20px;
     align-items: center;
     justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.16);
 }
 
 .formButtonClose {
@@ -34,16 +37,16 @@
 
 .formTitle {
     font-weight: bold;
-    font-size: 30px;
-    line-height: 30px;
-    width: 200px;
+    font-size: 32px;
+    line-height: 32px;
+    width: 160px;
     margin: 0px 0 25px 0;
 }
 
 .formText {
     color: #fff;
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 24px;
     width: 220px;
     margin: 0 0 25px 0;
 }
@@ -52,15 +55,14 @@
     display: flex;
     flex-direction: column;
     color: #fff;
-    font-size: 15px;
-    line-height: 23px;
 }
 
 .formFieldName {
     background-color: #E8336A;
     border-radius: 50px;
     border: #fff solid 3px;
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 35px;
     padding: 5px 0px 5px 15px;
     margin-bottom: 10px;
     color: #fff;
@@ -74,7 +76,8 @@
     background-color: #E8336A;
     border-radius: 50px;
     border: #fff solid 3px;
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 35px;
     padding: 5px 0px 5px 15px;
     margin-bottom: 10px;
     color: #fff;
@@ -88,7 +91,8 @@
     background-color: #E8336A;
     border-radius: 50px;
     border: #fff solid 3px;
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 35px;
     padding: 5px 0px 5px 15px;
     margin-bottom: 10px;
     color: #fff;
@@ -102,7 +106,8 @@
     background-color: #E8336A;
     border-radius: 50px;
     border: #fff solid 3px;
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 35px;
     padding: 5px 0px 5px 15px;
     margin-bottom: 10px;
     color: #fff;
@@ -116,8 +121,8 @@
     background-color: #E8336A;
     border-radius: 20px;
     border: #fff solid 3px;
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 35px;
     width: 271px;
     height: 120px;
     padding: 5px 10px 10px 15px;
@@ -134,13 +139,15 @@
     color: #E8336A;
     border: none;
     border-radius: 36px;
-    width: 271px;
+    width: 150px;
     height: 49px;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 18px;
     font-weight: bolder;
     margin: 10px 0 30px 0;
     filter: drop-shadow(0px 9px 9px rgba(0, 0, 0, 0.16));
     cursor: pointer;
+    padding: 1px 0 0 0;
 }
 
 .formButtonArrow {
@@ -149,7 +156,8 @@
     height: 21px;
     position: absolute;
     top: 15px;
-    left: 240px;
+    left: 110px;
+    transform: scale(0.8);
 }
 
 @media (min-width: 720px) {

@@ -243,12 +243,12 @@ const PayBoleto = () => {
                                 :
                                 <div className={styles.paymentMethodFinalBox2Text}>10499136581700010014305004189649795680000099900</div>
                                 }
-                                <div className={styles.paymentMethodFinalIconCopy} />
+                                <div className={styles.paymentMethodFinalIconCopy} onClick={() => alert('Copiado!')} />
                             </div>
                             <div className={styles.paymentMethodFinalText3}>Você também pode imprimir o boleto e pagar pessoalmente no seu banco, caixas eletrônicos e algumas lojas.</div>
                             <div className={styles.paymentMethodFinalContainer1}>
                                 <div className={styles.paymentMethodFinalIconPrinter} />
-                                <div className={styles.paymentMethodFinalTextPrint}>Imprimir boleto</div>
+                                <div className={styles.paymentMethodFinalTextPrint} onClick={() => alert('Imprimindo...')}>Imprimir boleto</div>
                             </div>
                         </div>
                         <div className={styles.paymentMethodFinalContainer2}>
@@ -267,7 +267,7 @@ const PayBoleto = () => {
                             <div className={styles.footerIconInsta} onClick={instaLink} />
                             <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
                         </div>
-                        <Link href="/form?uri=" as={"/form"} passHref>
+                        <Link href="/?uri=" as={"/"} passHref>
                             <button className={styles.footerButton}>Começe agora <span className={styles.footerButtonArrow} /></button>
                         </Link>
                     </div>

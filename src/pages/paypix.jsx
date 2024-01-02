@@ -234,7 +234,7 @@ const PayPix = () => {
                             <div className={styles.paymentMethodFinalText1Pix}>Agora você só precisa finalizar o pagamento.</div>
                             <div className={styles.paymentMethodFinalBox1Pix}>
                                 <div className={styles.paymentMethodFinalBox2Pix}>
-                                    <div className={styles.paymentMethodFinalIconCopyPix} />
+                                    <div className={styles.paymentMethodFinalIconCopyPix} onClick={() => alert('Copiado!')} />
                                     <div>Copiar código PIX</div>
                                 </div>
                                 <div className={styles.paymentMethodFinalQRPix} />
@@ -261,8 +261,8 @@ const PayPix = () => {
                             <div className={styles.footerIconInsta} onClick={instaLink} />
                             <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
                         </div>
-                        <Link href="/form?uri=" as={"/form"} passHref>
-                            <button className={styles.footerButton}>Começe agora <span className={styles.footerButtonArrow} /></button>
+                        <Link href="/?uri=" as={"/"} passHref>
+                        <button className={styles.footerButton}>Começe agora <span className={styles.footerButtonArrow} /></button>
                         </Link>
                     </div>
                     

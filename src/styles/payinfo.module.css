@@ -82,7 +82,7 @@
 
 .paymentMethodFinalPix {
   height: 677px;
-  width: 619px;
+  width: 259px;
   background-color: #fff;
   z-index: 9;
   border-radius: 10px;
@@ -1295,7 +1295,7 @@
 }
 
 .faqLine {
-    width: 260px;
+    width: 100%;
     height: 1px;
     background-color: #707070;
 }
@@ -1305,6 +1305,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 15px 0 15px 0;
+    width: 100%;
 }
 
 .faqQuestionTitle {
@@ -1766,7 +1767,7 @@ margin: 0 0 0 -10px;
   color: #707070;
   font-size: 20px;
   line-height: 27px;
-  margin: 20px 0 20px 35px;
+  margin: -27px 0 50px 500px;
   align-self: self-start;
 }
 
@@ -1781,7 +1782,7 @@ margin: 0 0 0 -10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 70px;
 }
 
 .paymentSummaryTotalText {
@@ -2177,7 +2178,7 @@ margin: 0 0 0 -10px;
   line-height: 24px;
   width: 350px;
   text-align: center;
-  margin: 20px 0 40px 0;
+  margin: 20px 0 80px 0;
 
 }
 
@@ -2338,7 +2339,7 @@ margin: 0 0 0 -10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 15px 60px 15px 15px;
 }
 
 .paymentMethodFinalText2 {

@@ -487,9 +487,6 @@ const PayInfo = () => {
                             <div className={styles.footerIconInsta} onClick={instaLink} />
                             <div className={styles.footerIconLinkedin} onClick={linkedinLink} />
                         </div>
-                        <Link href="/form?uri=" as={"/form"} passHref>
-                            <button className={styles.footerButton}>Começe agora <span className={styles.footerButtonArrow} /></button>
-                        </Link>
                     </div>
                     
                 </div>
