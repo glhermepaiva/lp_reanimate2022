@@ -298,7 +298,7 @@ const PayInfo = () => {
                         <Link href="/?uri=" as={"/"} passHref>
                             <div className={styles.reanimateLogoPlans} />
                         </Link>
-                        {size.width <= 1366 ?
+                        {size.width < 1200 ?
                             <div className={styles.hamburgerPlans} onClick={openMenu} />
                         :
                             <button className={styles.accessReanimButton} onClick={reanimLink} >Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>

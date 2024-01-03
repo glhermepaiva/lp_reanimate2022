@@ -422,7 +422,10 @@ export default function LandingPage() {
                 {size.width < 1200 ?
                     <div className={styles.hamburgerPlans} onClick={openMenu} />
                 :
-                    <button className={styles.accessReanimButton} onClick={reanimLink} >Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>
+                    <div className={styles.headerButtons}>
+                        <button className={styles.loginButton} onClick={openReel}>Login</button>
+                        <button className={styles.accessReanimButton} onClick={reanimLink}>Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>
+                    </div>
                 }
             </div>
             <div className={styles.carouselPlans}>
@@ -1020,68 +1023,70 @@ export default function LandingPage() {
                 </div>
             </div>
             <div className={styles.faq}>
-                <div className={styles.faqTitle}>Perguntas frequentes</div>
-                <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou 
-                    <Link href="/form?uri=" as={"/form"} passHref>
-                    <div className={styles.faqContact}> entre em contato</div>
-                    </Link>
-                .</div>
-                <div className={styles.faqContainer}>
-                    <div className={styles.faqLine} />
-                    {question1Closed ?
-                    <div className={styles.faqQuestion}>
-                        <div className={styles.faqQuestionTop} onClick={openQuestion1}>
-                            <div className={styles.faqQuestionTitle}>O que é um plano Premium?</div>
-                            <div className={styles.faqQuestionArrowDown} />
+                <div className={styles.faqInner}>
+                    <div className={styles.faqTitle}>Perguntas frequentes</div>
+                    <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou 
+                        <Link href="/form?uri=" as={"/form"} passHref>
+                        <div className={styles.faqContact}> entre em contato</div>
+                        </Link>
+                    .</div>
+                    <div className={styles.faqContainer}>
+                        <div className={styles.faqLine} />
+                        {question1Closed ?
+                        <div className={styles.faqQuestion}>
+                            <div className={styles.faqQuestionTop} onClick={openQuestion1}>
+                                <div className={styles.faqQuestionTitle}>O que é um plano Premium?</div>
+                                <div className={styles.faqQuestionArrowDown} />
+                            </div>
                         </div>
-                    </div>
-                    :
-                    <div className={styles.faqQuestion}>
-                        <div className={styles.faqQuestionTop} onClick={closeQuestion1}>
-                            <div className={styles.faqQuestionTitle}>O que é um plano Premium?</div>
-                            <div className={styles.faqQuestionArrowUp} />
+                        :
+                        <div className={styles.faqQuestion}>
+                            <div className={styles.faqQuestionTop} onClick={closeQuestion1}>
+                                <div className={styles.faqQuestionTitle}>O que é um plano Premium?</div>
+                                <div className={styles.faqQuestionArrowUp} />
+                            </div>
+                            <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
                         </div>
-                        <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
-                    </div>
-                    }
-                    
-                    <div className={styles.faqLine} />
-                    {question2Closed ?
-                    <div className={styles.faqQuestion}>
-                        <div className={styles.faqQuestionTop} onClick={openQuestion2}>
-                            <div className={styles.faqQuestionTitle}>Posso experimentar um plano Premium gratuitamente?</div>
-                            <div className={styles.faqQuestionArrowDown} />
+                        }
+                        
+                        <div className={styles.faqLine} />
+                        {question2Closed ?
+                        <div className={styles.faqQuestion}>
+                            <div className={styles.faqQuestionTop} onClick={openQuestion2}>
+                                <div className={styles.faqQuestionTitle}>Posso experimentar um plano Premium gratuitamente?</div>
+                                <div className={styles.faqQuestionArrowDown} />
+                            </div>
                         </div>
-                    </div>
-                    :
-                    <div className={styles.faqQuestion}>
-                        <div className={styles.faqQuestionTop} onClick={closeQuestion2}>
-                            <div className={styles.faqQuestionTitle}>Posso experimentar um plano Premium gratuitamente?</div>
-                            <div className={styles.faqQuestionArrowUp} />
+                        :
+                        <div className={styles.faqQuestion}>
+                            <div className={styles.faqQuestionTop} onClick={closeQuestion2}>
+                                <div className={styles.faqQuestionTitle}>Posso experimentar um plano Premium gratuitamente?</div>
+                                <div className={styles.faqQuestionArrowUp} />
+                            </div>
+                            <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
                         </div>
-                        <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
-                    </div>
-                    }
-                    
-                    <div className={styles.faqLine} />
-                    {question3Closed ?
-                    <div className={styles.faqQuestion}>
-                        <div className={styles.faqQuestionTop} onClick={openQuestion3}>
-                            <div className={styles.faqQuestionTitle}>Quais métodos de pagamento online são aceitos?</div>
-                            <div className={styles.faqQuestionArrowDown} />
+                        }
+                        
+                        <div className={styles.faqLine} />
+                        {question3Closed ?
+                        <div className={styles.faqQuestion}>
+                            <div className={styles.faqQuestionTop} onClick={openQuestion3}>
+                                <div className={styles.faqQuestionTitle}>Quais métodos de pagamento online são aceitos?</div>
+                                <div className={styles.faqQuestionArrowDown} />
+                            </div>
                         </div>
-                    </div>
-                    :
-                    <div className={styles.faqQuestion}>
-                        <div className={styles.faqQuestionTop} onClick={closeQuestion3}>
-                            <div className={styles.faqQuestionTitle}>Quais métodos de pagamento online são aceitos?</div>
-                            <div className={styles.faqQuestionArrowUp} />
+                        :
+                        <div className={styles.faqQuestion}>
+                            <div className={styles.faqQuestionTop} onClick={closeQuestion3}>
+                                <div className={styles.faqQuestionTitle}>Quais métodos de pagamento online são aceitos?</div>
+                                <div className={styles.faqQuestionArrowUp} />
+                            </div>
+                            <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
                         </div>
-                        <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
+                        }
+                        <div className={styles.faqLine} />
                     </div>
-                    }
-                    <div className={styles.faqLine} />
-                </div>
+                </div>    
             </div>
             <div className={styles.footer}>
                 <div className={styles.footerText}>©2023 PointMedia</div>

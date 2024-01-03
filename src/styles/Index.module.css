@@ -876,7 +876,7 @@
     position: absolute;
     top: -20px;
     right: 390px;
-    z-index: 99999;
+    z-index: 99;
 }
 
 .accessReanimButtonArrow {
@@ -2631,7 +2631,9 @@
     }
 
     .headerLogoHamb {
-        margin: 35px 0 35px 0;
+        margin: 35px auto 50px auto;
+        width: 80%;
+        justify-content: space-between;
     }
 
     .reanimateLogo {
@@ -2639,26 +2641,25 @@
         width: 240px;
         height: 87px;
         transform: scale(1);
-        margin: 0 200px 0 50px;
-    }
-
-    .hamburger {
-        background-image: url(../assets/hamburger.png);
-        width: 45px;
-        height: 45px;
-        margin: 0 -50px 0 0;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        transform: scale(1);
-    }
-
-    .headerImages {
-        position: relative;
-        margin: 50px 0 0 0;
+        margin: 0 0px 0 85px;
     }
 
     .headerButtons {
         display: flex;
+    }
+
+    .headerPlans {
+        height: auto;
+        margin: 35px auto 50px auto;
+        width: 80%;
+        justify-content: space-between;
+    }
+
+    .reanimateLogoPlans {
+        background-image: url(../assets/logo_reanimatem.png);
+        width: 240px;
+        height: 87px;
+        margin: 0px 0 0 85px;
     }
 
     .loginButton {
@@ -2713,6 +2714,11 @@
         left: 170px;
         top: 13px;
         transform: scale(0.8);
+    }
+
+    .headerImages {
+        position: relative;
+        margin: 50px 0 0 0;
     }
 
     .client1 {
@@ -2798,7 +2804,8 @@
 
     .modalLogin {
         width: 65%;
-        margin: 50px 0 0 0;
+        margin: 0 0 0 0;
+        transform: scale(0.75);
     }
 
     .modalLoginTitle {
@@ -3087,7 +3094,13 @@
     }
     
     .faq {
-        padding: 70px 0px 80px 70px;
+        padding: 70px 0px 80px 0px;
+        width: 100vw;
+    }
+
+    .faqInner {
+        width: 1060px;
+        margin: 0 auto;
     }
     
     .faqTitle {
@@ -3157,6 +3170,16 @@
         line-height: 19px;
         margin: 0 0 20px 0;
     }
+
+    
+
+    
+
+    
+
+
+
+
 
     .drawingGirlRocket {
         background-image: url(../assets/girl_rocketg.png);

@@ -712,6 +712,36 @@
     transform: scale(1);
 }
 
+  .accessReanimButton {
+    background-color: #E8336A;
+    color: #fff;
+    border: none;
+    border-radius: 36px;
+    width: 204px;
+    height: 44px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    margin: 0 0 0px 0;
+    filter: drop-shadow(0px 9px 9px rgba(0, 0, 0, 0.16));
+    user-select: none;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .accessReanimButtonArrow {
+    background-image: url(../assets/arrow_white.png);
+    width: 12px;
+    height: 19px;
+    position: absolute;
+    left: 175px;
+    top: 13px;
+    transform: scale(0.8);
+  }
+
 .carouselPlans {
     display: flex;
     justify-content: center;
@@ -1446,7 +1476,7 @@
   background-image: url(../assets/plans_rocket.png);
   width: 173px;
   height: 167px;
-  margin: -1950px 0 0 -580px;
+  margin: -1935px 0 0 -580px;
   position: absolute;
 }
 
@@ -2532,86 +2562,100 @@ margin: 0 0 0 -10px;
 
 @media (min-width: 1200px) {
 
+  .headerPlans {
+    height: auto;
+    margin: 35px auto 50px auto;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.reanimateLogoPlans {
+    background-image: url(../assets/logo_reanimatem.png);
+    width: 240px;
+    height: 87px;
+    margin: 0px 0 0 85px;
+}
+
   .faq {
     padding: 70px 0px 80px 70px;
-}
+  }
 
-.faqTitle {
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: bold;
-    width: 160px;
-}
+  .faqTitle {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: bold;
+      width: 160px;
+  }
 
-.faqText {
-    font-size: 17px;
-    line-height: 25px;
-    width: 310px;
-    margin: 10px 0 40px 0;
-}
+  .faqText {
+      font-size: 17px;
+      line-height: 25px;
+      width: 310px;
+      margin: 10px 0 40px 0;
+  }
 
-.faqContact {
-    display: inline;
-    font-size: 17px;
-    line-height: 25px;
-    color: #3899EC;
-}
+  .faqContact {
+      display: inline;
+      font-size: 17px;
+      line-height: 25px;
+      color: #3899EC;
+  }
 
-.faqContainer {
-    width: 620px;
-    margin: -180px 0 0 400px;
-}
+  .faqContainer {
+      width: 620px;
+      margin: -180px 0 0 400px;
+  }
 
-.faqLine {
-    width: 620px;
-    height: 1px;
-    background-color: #707070;
-}
+  .faqLine {
+      width: 620px;
+      height: 1px;
+      background-color: #707070;
+  }
 
-.faqQuestionTop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0 15px 0;
-    width: 610px;
-}
+  .faqQuestionTop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0 15px 0;
+      width: 610px;
+  }
 
-.faqQuestionTitle {
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: bold;
-    width: 420px;
-}
+  .faqQuestionTitle {
+      font-size: 16px;
+      line-height: 25px;
+      font-weight: bold;
+      width: 420px;
+  }
 
-.faqQuestionArrowUp {
-    background-image: url(../assets/faq_arrow.png);
-    width: 15px;
-    height: 7px;
-    margin: 0 10px 0 0;
-    transform: scaleY(-1);
-}
+  .faqQuestionArrowUp {
+      background-image: url(../assets/faq_arrow.png);
+      width: 15px;
+      height: 7px;
+      margin: 0 10px 0 0;
+      transform: scaleY(-1);
+  }
 
-.faqQuestionArrowDown {
-    background-image: url(../assets/faq_arrow.png);
-    width: 15px;
-    height: 7px;
-    margin: 0 10px 0 0;
-}
+  .faqQuestionArrowDown {
+      background-image: url(../assets/faq_arrow.png);
+      width: 15px;
+      height: 7px;
+      margin: 0 10px 0 0;
+  }
 
-.faqQuestionText {
-    font-size: 14px;
-    line-height: 19px;
-    margin: 0 0 20px 0;
-}
+  .faqQuestionText {
+      font-size: 14px;
+      line-height: 19px;
+      margin: 0 0 20px 0;
+  }
 
-.footer {
-  flex-direction: row;
-  justify-content: space-evenly;
-}
+  .footer {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 
-.footerButton {
-  margin: 100px 0 100px 0;
-}
+  .footerButton {
+    margin: 100px 0 100px 0;
+  }
 
 }
 
