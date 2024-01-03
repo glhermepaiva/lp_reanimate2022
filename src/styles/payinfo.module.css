@@ -2532,6 +2532,87 @@ margin: 0 0 0 -10px;
 
 @media (min-width: 1200px) {
 
+  .faq {
+    padding: 70px 0px 80px 70px;
+}
+
+.faqTitle {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;
+    width: 160px;
+}
+
+.faqText {
+    font-size: 17px;
+    line-height: 25px;
+    width: 310px;
+    margin: 10px 0 40px 0;
+}
+
+.faqContact {
+    display: inline;
+    font-size: 17px;
+    line-height: 25px;
+    color: #3899EC;
+}
+
+.faqContainer {
+    width: 620px;
+    margin: -180px 0 0 400px;
+}
+
+.faqLine {
+    width: 620px;
+    height: 1px;
+    background-color: #707070;
+}
+
+.faqQuestionTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 15px 0;
+    width: 610px;
+}
+
+.faqQuestionTitle {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: bold;
+    width: 420px;
+}
+
+.faqQuestionArrowUp {
+    background-image: url(../assets/faq_arrow.png);
+    width: 15px;
+    height: 7px;
+    margin: 0 10px 0 0;
+    transform: scaleY(-1);
+}
+
+.faqQuestionArrowDown {
+    background-image: url(../assets/faq_arrow.png);
+    width: 15px;
+    height: 7px;
+    margin: 0 10px 0 0;
+}
+
+.faqQuestionText {
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0 0 20px 0;
+}
+
+.footer {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footerButton {
+  margin: 100px 0 100px 0;
+}
+
 }
 
 @media (min-width: 1600px) {

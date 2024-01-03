@@ -136,13 +136,14 @@ export default function LandingPage() {
         injectStyles: [
         `
             .swiper-wrapper {
-            width: 100vw;
-            height: 600px;
-            margin: 0px 0 20px 0;
+                width: 100vw;
+                height: 600px;
+                margin: 0px 0 20px 0;
+                display: flex;
             }
 
             .swiper-pagination {
-            margin: 0px 0 50px 0 !important;
+                margin: 0px 0 50px 0 !important;
             } 
 
             .swiper-pagination-bullet {
@@ -150,6 +151,27 @@ export default function LandingPage() {
                 height: 27px;
                 margin: 0px 10px !important;
                 background-color: #E8336A;
+            }
+
+            @media (min-width: 1200px) {
+                
+                .swiper-wrapper {
+                    width: 100vw;
+                    height: 250px;
+                    margin: 20px 0 10px 0;
+                }
+        
+                .swiper-pagination {
+                    margin: 0px 0 50px 0 !important;
+                } 
+        
+                .swiper-pagination-bullet {
+                    width: 27px;
+                    height: 27px;
+                    margin: 0px 10px !important;
+                    background-color: #E8336A;
+                }
+
             }
         `,
         ],
@@ -332,11 +354,11 @@ export default function LandingPage() {
                         <div style={{display: 'flex', justifyContent: 'space-between'}}>
                             <div>
                                 <div className={styles.modalLoginFormDataInput}>Nome</div>
-                                <input className={styles.modalLoginFormInput} type="text" name="name" style={{width: '228px'}} />
+                                <input className={styles.modalLoginFormInput} type="text" name="name" style={{width: size.width < 1200 ? '228px' : '278px'}} />
                             </div>
                             <div>
                                 <div v className={styles.modalLoginFormDataInput}>Sobrenome</div>
-                                <input className={styles.modalLoginFormInput} type="text" name="surname" style={{width: '228px'}} />
+                                <input className={styles.modalLoginFormInput} type="text" name="surname" style={{width: size.width < 1200 ? '228px' : '278px'}} />
                             </div>
                         </div>
                         :
@@ -397,7 +419,7 @@ export default function LandingPage() {
             <div>
             <div className={styles.headerPlans}>
                 <div className={styles.reanimateLogoPlans} onClick={refresh} />
-                {size.width <= 1366 ?
+                {size.width < 1200 ?
                     <div className={styles.hamburgerPlans} onClick={openMenu} />
                 :
                     <button className={styles.accessReanimButton} onClick={reanimLink} >Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>
@@ -414,8 +436,191 @@ export default function LandingPage() {
                 <div className={styles.cloud4Plans} />
                 <div className={styles.cloud5Plans} />
                 <div className={styles.cloud6Plans} />
-                {size.width >= 720 ?
-                    <Swiper initialSlide={1} slidesPerView={1.85} centeredSlides={true} className={styles.carouselCards} style={{height: '800px', margin: '-200px 0 0 0'}}>
+                {size.width >= 1200 ?
+                    <Swiper initialSlide={1} slidesPerView={3} centeredSlides={true} className={styles.carouselCards} style={{height: '800px', margin: '-200px 0 0 0'}}>
+                    <SwiperSlide>
+                    <div className={styles.carouselCard}>
+                    <div className={styles.carouselContainerTitle2}>
+                        <div className={styles.carouselCardIconReanimate} />
+                            <div className={styles.carouselCardTitle}>Básico</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconUser} />
+                            <div className={styles.carouselCardText1}>6 acessos</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconPapers} />
+                            <div className={styles.carouselCardText1}>600 peças por mês</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconGallery} />
+                            <div className={styles.carouselCardText1}>Exportação</div>
+                            <div className={styles.carouselCardIconInformation} />
+                        </div>
+                        <div className={styles.carouselContainerPayOptions}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                            </div>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                            </div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardPriceBlack}>R$</div>
+                            <div className={styles.carouselCardPricePink}>999</div>
+                            <div className={styles.carouselCardPriceBlack}>99</div>
+                        </div>
+                        <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                            <div className={styles.carouselCardButton}>Escolher</div>
+                        </Link>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Master Motion</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Replicate</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Suporte padrão por e-mail</div>
+                            </div>
+                        </div>
+                    </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className={styles.carouselTopChoice}>MAIS ESCOLHIDO</div>
+                        <div className={styles.carouselCardTopChoice}>
+                            <div className={styles.carouselContainerTitle}>
+                                <div className={styles.carouselCardIconReanimate} />
+                                <div className={styles.carouselCardTitle}>Premium</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconUser} />
+                                <div className={styles.carouselCardText1}>Acessos Ilimitados</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconPapers} />
+                                <div className={styles.carouselCardText1}>2.500 peças por mês</div>
+                            </div>
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardIconGallery} />
+                                <div className={styles.carouselCardText1}>Exportação</div>
+                                <div className={styles.carouselCardIconInformation} />
+                            </div>
+
+                            <div className={styles.carouselContainerPayOptions}>
+                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                    <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                                </div>
+                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                    <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                                </div>
+                            </div>
+
+                            <div className={styles.carouselContainer}>
+                                <div className={styles.carouselCardPriceBlack}>R$</div>
+                                <div className={styles.carouselCardPricePink}>999</div>
+                                <div className={styles.carouselCardPriceBlack}>99</div>
+                            </div>
+                            <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                                <div className={styles.carouselCardButton}>Escolher</div>
+                            </Link>
+                            <div>
+                                <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Master Motion</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Replicate</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Suporte premium por e-mail</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Chatbot</div>
+                                </div>
+                                <div className={styles.carouselContainer2}>
+                                    <div className={styles.carouselCardIconCheckmark} />
+                                    <div className={styles.carouselCardText2}>Chat</div>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <div className={styles.carouselCard}>
+                    <div className={styles.carouselContainerTitle2}>
+                        <div className={styles.carouselCardIconReanimate} />
+                            <div className={styles.carouselCardTitle}>Avançado</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconUser} />
+                            <div className={styles.carouselCardText1}>10 acessos</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconPapers} />
+                            <div className={styles.carouselCardText1}>1.500 peças por mês</div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardIconGallery} />
+                            <div className={styles.carouselCardText1}>Exportação</div>
+                            <div className={styles.carouselCardIconInformation} />
+                        </div>
+                        <div className={styles.carouselContainerPayOptions}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
+                            </div>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
+                            </div>
+                        </div>
+                        <div className={styles.carouselContainer}>
+                            <div className={styles.carouselCardPriceBlack}>R$</div>
+                            <div className={styles.carouselCardPricePink}>999</div>
+                            <div className={styles.carouselCardPriceBlack}>99</div>
+                        </div>
+                        <Link href="/payinfo?uri=" as={"/payinfo"} passHref>
+                            <div className={styles.carouselCardButton}>Escolher</div>
+                        </Link>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Recursos e Funcionalidades:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Master Motion</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Replicate</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={styles.carouselCardSemiTitle}>Suporte ao Cliente:</div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Suporte prioritário por e-mail</div>
+                            </div>
+                            <div className={styles.carouselContainer2}>
+                                <div className={styles.carouselCardIconCheckmark} />
+                                <div className={styles.carouselCardText2}>Chatbot</div>
+                            </div>
+                        </div>
+                    </div>
+                    </SwiperSlide>
+                </Swiper>
+                : size.width >= 720 ?
+                <Swiper initialSlide={1} slidesPerView={1.85} centeredSlides={true} className={styles.carouselCards} style={{height: '800px', margin: '-200px 0 0 0'}}>
                     <SwiperSlide>
                     <div className={styles.carouselCard}>
                     <div className={styles.carouselContainerTitle2}>
@@ -801,11 +1006,17 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.paymentOptionsContainer}>
                     <div className={styles.paymentOptionsLine1} />
-                    <div className={styles.paymentOptionsApprovalIcon} />
-                    <div className={styles.paymentOptionsTestText}>TESTE GRATUITO</div>
+                    <div>
+                        <div className={styles.paymentOptionsApprovalIcon} />
+                        <div className={styles.paymentOptionsTestText}>TESTE GRATUITO</div>
+                        <div className={styles.paymentOptionsExtra1} style={{display: size.width < 1200 ? 'none' : 'block'}}>Período de teste gratuito para permitir que os usuários experimentem o serviço.</div>
+                    </div>
                     <div className={styles.paymentOptionsLine2} />
-                    <div className={styles.paymentOptionsSecurityIcon} />
-                    <div className={styles.paymentOptionsPaymentText}>PAGAMENTO SEGURO SSL</div>
+                    <div>
+                        <div className={styles.paymentOptionsSecurityIcon} />
+                        <div className={styles.paymentOptionsPaymentText}>PAGAMENTO SEGURO SSL</div>
+                        <div className={styles.paymentOptionsExtra2} style={{display: size.width < 1200 ? 'none' : 'block'}}>Sua informação é protegida pela criptografia SSL 256-bit.</div>
+                    </div>
                 </div>
             </div>
             <div className={styles.faq}>
@@ -815,7 +1026,7 @@ export default function LandingPage() {
                     <div className={styles.faqContact}> entre em contato</div>
                     </Link>
                 .</div>
-                <div>
+                <div className={styles.faqContainer}>
                     <div className={styles.faqLine} />
                     {question1Closed ?
                     <div className={styles.faqQuestion}>
@@ -888,11 +1099,14 @@ export default function LandingPage() {
             <div className={styles.header}>
                 <div className={styles.headerLogoHamb}>
                     <div className={styles.reanimateLogo} onClick={refresh} />
-                    {size.width <= 1366 ?
+                    {size.width < 1200 ?
                     <div className={styles.hamburger} onClick={openMenu} />
                     :
-                    <button className={styles.accessReanimButton} onClick={reanimLink} >Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>
-                }
+                    <div className={styles.headerButtons}>
+                        <button className={styles.loginButton} onClick={openReel}>Login</button>
+                        <button className={styles.accessReanimButton} onClick={reanimLink}>Acesse o re.animate <div className={styles.accessReanimButtonArrow} /></button>
+                    </div>
+                    }
                 </div>
                 <div className={styles.headerImages}>
                     <div className={styles.drawingGirl} >
@@ -972,6 +1186,31 @@ export default function LandingPage() {
             </div>
             <div className={styles.carousel}>
                 <div className={styles.carouselTitle}>Nossos clientes:</div>
+                {size.width >= 1200 ?
+                <swiper-container ref={paginationRef} init="false">
+                    <SwiperSlide>
+                        <div style={{display: 'flex'}}>
+                            <div className={styles.client1} />
+                            <div className={styles.client2} />
+                            <div className={styles.client3} />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <div style={{display: 'flex'}}>
+                        <div className={styles.client4} />
+                        <div className={styles.client5} />
+                        <div className={styles.client6} />
+                    </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <div style={{display: 'flex'}}>
+                        <div className={styles.client7} />
+                        <div className={styles.client8} />
+                        <div className={styles.client9} />
+                    </div>
+                    </SwiperSlide>
+                </swiper-container>
+                :
                 <swiper-container ref={paginationRef} init="false">
                     <SwiperSlide>
                         <div className={styles.client1} />
@@ -988,7 +1227,8 @@ export default function LandingPage() {
                         <div className={styles.client8} />
                         <div className={styles.client9} />
                     </SwiperSlide>
-                </swiper-container>    
+                </swiper-container>
+                }
             </div>
             <div className={styles.footer}>
                 <div className={styles.footerText}>©2023 PointMedia</div>

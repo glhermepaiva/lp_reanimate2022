@@ -900,6 +900,7 @@
     height: 138px;
     top: 30px;
     left: 300px;
+    filter: grayscale(1);
 }
 
 .drawingGirlCloudTop {
@@ -940,6 +941,7 @@
     top: 70px;
     left: 440px;
     transform: scale(0.4);
+    filter: grayscale(1);
 }
 
 .drawingGirlClock {
@@ -2607,18 +2609,553 @@
 
 @media (min-width: 1200px) {
 
+    .hoverLogoClose {
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 25px 0 0 0;
+    }
+
+    .reanimateLogoMenu {
+        background-image: url(../assets/logo_reanimatew.png);
+        width: 240px;
+        height: 100px;
+        margin: 0 140px 0 -50px;
+        transform: scale(0.9);
+        background-repeat: no-repeat;
+    }
+
+    .menuClose {
+        margin: -8px -30px 0 0;
+    }
+
+    .headerLogoHamb {
+        margin: 35px 0 35px 0;
+    }
+
     .reanimateLogo {
         background-image: url(../assets/logo_reanimatem.png);
-        position: relative;
-        margin: 0px 0 180px 90px;
         width: 240px;
         height: 87px;
-        transform: scale(0.75);
+        transform: scale(1);
+        margin: 0 200px 0 50px;
+    }
+
+    .hamburger {
+        background-image: url(../assets/hamburger.png);
+        width: 45px;
+        height: 45px;
+        margin: 0 -50px 0 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        transform: scale(1);
+    }
+
+    .headerImages {
+        position: relative;
+        margin: 50px 0 0 0;
+    }
+
+    .headerButtons {
+        display: flex;
+    }
+
+    .loginButton {
+        background-color: #E8336A;
+        color: #fff;
+        border: none;
+        border-radius: 36px;
+        width: 204px;
+        height: 44px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        filter: drop-shadow(0px 9px 9px rgba(0, 0, 0, 0.16));
+        user-select: none;
+        cursor: pointer;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 0 0;
+        position: relative;
     }
 
     .accessReanimButton {
-        top: 20px;
-        right: 180px;
+        background-color: #E8336A;
+        color: #fff;
+        border: none;
+        border-radius: 36px;
+        width: 204px;
+        height: 44px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        filter: drop-shadow(0px 9px 9px rgba(0, 0, 0, 0.16));
+        user-select: none;
+        cursor: pointer;
+        text-align: left;
+        padding-left: 0;
+        margin: 0 0 0 15px;
+        position: relative;
+        right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .accessReanimButtonArrow {
+        background-image: url(../assets/arrow_white.png);
+        width: 12px;
+        height: 19px;
+        position: absolute;
+        left: 170px;
+        top: 13px;
+        transform: scale(0.8);
+    }
+
+    .client1 {
+        background-image: url(../assets/media/client01.png);
+        width: 283px;
+        height: 120px;
+        transform: scale(0.85);
+        margin: 0 auto 0px auto;
+        background-position: center;
+    }
+    
+    .client2 {
+        background-image: url(../assets/media/client02.png);
+        width: 283px;
+        height: 120px;
+        transform: scale(0.85);
+        margin: 0 auto 0px auto;
+        background-position: center;
+    }
+    
+    .client3 {
+        background-image: url(../assets/media/client03.png);
+        width: 283px;
+        height: 120px;
+        transform: scale(0.85);
+        margin: 0 auto;
+        background-position: center;
+    }
+    
+    .client4 {
+        background-image: url(../assets/media/client04.png);
+        width: 283px;
+        height: 120px;
+        transform: scale(0.85);
+        margin: 0 auto 0px auto;
+        background-position: center;
+    }
+    
+    .client5 {
+        background-image: url(../assets/media/client05.png);
+        width: 283px;
+        height: 150px;
+        transform: scale(0.85);
+        margin: 0 auto 0px auto;
+        background-position: center;
+    }
+    
+    .client6 {
+        background-image: url(../assets/media/client06.png);
+        width: 283px;
+        height: 120px;
+        transform: scale(0.85);
+        margin: 0 auto;
+        background-position: center;
+    }
+    
+    .client7 {
+        background-image: url(../assets/media/client07.png);
+        width: 283px;
+        height: 120px;
+        transform: scale(0.85);
+        margin: 0 auto 0px auto;
+        background-position: center;
+    }
+    
+    .client8 {
+        background-image: url(../assets/media/client08.png);
+        width: 283px;
+        height: 120px;
+        transform: scale(0.85);
+        margin: 0 auto 0px auto;
+        background-position: center;
+    }
+    
+    .client9 {
+        background-image: url(../assets/media/client09.png);
+        width: 283px;
+        height: 120px;
+        transform: scale(0.85);
+        margin: 0 auto;
+        background-position: center;
+    }
+
+    .modalLogin {
+        width: 65%;
+        margin: 50px 0 0 0;
+    }
+
+    .modalLoginTitle {
+        font-weight: bold;
+        font-size: 33px;
+        line-height: 44px;
+        width: 360px;
+        text-align: center;
+        margin: 30px 0 0 0;
+      }
+    
+      .modalLoginTitle2 {
+        font-weight: bold;
+        font-size: 33px;
+        line-height: 44px;
+        width: 360px;
+        text-align: center;
+        margin: 20px 0 -5px 0;
+      }
+    
+      .modalLoginGoogleButton {
+        width: 580px;
+        height: 61px;
+        background-color: #FFF;
+        border: 2px solid #E8336A;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 35px 0 20px 0;
+      }
+    
+      .googleLogo {
+        background-image: url(../assets/icon_google.png);
+        width: 30px;
+        height: 30px;
+        transform: scale(0.9);
+        margin: 0 10px 0 0;
+      }
+    
+      .googleLogin {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+        color: #E8336A;
+      }
+    
+      .modalLoginLineContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0 10px 0;
+      }
+    
+      .modalLoginLine1 {
+        width: 580px;
+        height: 1px;
+        background-color: #9b9b9b;
+        margin: 10px 0 10px 0;
+      }
+      
+      .modalLoginOuText {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        width: 40px;
+        margin: -25px 0 0 0;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+      }
+    
+      .modalLoginForm {
+        margin: 10px 0 10px 0px;
+      }
+    
+      .modalLoginFormEmail {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+      }
+    
+      .modalLoginFormEmailInput {
+        width: 579px;
+        height: 61px;
+        border-radius: 5px;
+        border: #000 2px solid;
+        margin: 10px 0 10px 0;
+      }
+    
+      .modalLoginFormPassword {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+      }
+    
+      .modalLoginFormPasswordInput {
+        width: 579px;
+        height: 61px;
+        border-radius: 5px;
+        border: #000 2px solid;
+        margin: 10px 0 10px 0;
+      }
+    
+      .modalLoginRememberContainer {
+        display: flex;
+        align-items: center;
+        margin: 5px 0 0 0;
+      }
+    
+      .modalLoginFormRememberInput {
+        width: 21px;
+        height: 21px;
+        border-radius: 4px;
+        margin: 0 10px 0 2px;
+        outline: 2px solid #000 !important;
+        appearance: none;
+      }
+    
+      .modalLoginFormRememberInput:checked {
+        background-color: #3899EC;
+      }
+    
+      .modalLoginFormRemember {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+      }
+    
+      .modalLoginFormLogInButton {
+        width: 579px;
+        height: 61px;
+        background-color: #E8336A;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+        margin: 30px 0 10px 0;
+      }
+    
+      .modalLoginFormForgotPassword {
+        font-weight: bold;
+        color: #3899EC;
+        text-align: center;
+        font-size: 20px;
+        line-height: 27px;
+      }
+
+      .modalLoginText {
+        font-size: 20px;
+        line-height: 27px;
+        margin: 0 0 30px 0;
+      }
+
+      .modalLoginFormDataInput {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+      }
+    
+      .modalLoginFormInput {
+        width: 579px;
+        height: 61px;
+        border-radius: 5px;
+        border: #000 2px solid;
+        margin: 10px 0 10px 0;
+      }
+    
+      .modalLoginFormRegisterButton {
+        width: 580px;
+        height: 61px;
+        background-color: #E8336A;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+        margin: 10px 0 0px 0;
+      }
+    
+      .modalLoginLine2 {
+        width: 451px;
+        height: 1px;
+        background-color: #9b9b9b;
+        margin: 20px 0 30px 0;
+      }
+      
+      .modalLoginText2 {
+        font-size: 20px;
+        line-height: 27px;
+        margin: 0 0 20px 0;
+        width: 390px;
+        text-align: center;
+      }
+
+    .businessPlanContainer {
+        width: 1160px;
+        height: 234px;
+        margin: -70px auto 20px auto;
+        padding: 50px;
+        position: relative;
+    }
+    
+    .businessPlanContainerText {
+        width: 700px;
+        margin: 10px 0 30px 0;
+    }
+    
+    .businessPlanContainerLink {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .paymentOptions {
+        margin: 30px auto 50px auto;
+        height: 100px;
+        width: 1100px;
+    }
+    
+    .paymentOptionsTitle {
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: bold;
+        width: 250px;
+        margin: 0 0 0 -60px;
+    }
+    
+    .paymentOptionsCC {
+        background-image: url(../assets/logos_cc.png);
+        width: 315px;
+        height: 28px;
+        transform: scale(1);
+        margin: 10px 0 15px 0;
+    }
+    
+    .paymentOptionsContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: auto;
+        margin: 0 0 20px 0;
+    }
+
+    .paymentOptionsTestText {
+        font-size: 14px;
+        line-height: 19px;
+        width: 120px;
+        margin: -55px 0 0 50px;
+    }
+
+    .paymentOptionsExtra1 {
+        font-size: 14px;
+        line-height: 16px;
+        width: 260px;
+        margin: 10px 0 0 50px;
+    }
+
+    .paymentOptionsPaymentText {
+        font-size: 14px;
+        line-height: 19px;
+        width: 180px;
+        margin: -55px 0 0 50px;
+    }
+
+    .paymentOptionsExtra2 {
+        font-size: 14px;
+        line-height: 16px;
+        width: 260px;
+        margin: 10px 0 0 50px;
+    }
+
+    .paymentOptionsLine1 {
+        width: 1px;
+        height: 31px;
+        margin: 0 30px 0 30px;
+    }
+
+    .paymentOptionsLine2 {
+        width: 1px;
+        height: 31px;
+        margin: 0 30px 0 30px;
+    }
+    
+    .faq {
+        padding: 70px 0px 80px 70px;
+    }
+    
+    .faqTitle {
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: bold;
+        width: 160px;
+    }
+    
+    .faqText {
+        font-size: 17px;
+        line-height: 25px;
+        width: 310px;
+        margin: 10px 0 40px 0;
+    }
+    
+    .faqContact {
+        display: inline;
+        font-size: 17px;
+        line-height: 25px;
+        color: #3899EC;
+    }
+
+    .faqContainer {
+        width: 620px;
+        margin: -180px 0 0 400px;
+    }
+    
+    .faqLine {
+        width: 620px;
+        height: 1px;
+        background-color: #707070;
+    }
+    
+    .faqQuestionTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px 0 15px 0;
+        width: 610px;
+    }
+    
+    .faqQuestionTitle {
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: bold;
+        width: 420px;
+    }
+    
+    .faqQuestionArrowUp {
+        background-image: url(../assets/faq_arrow.png);
+        width: 15px;
+        height: 7px;
+        margin: 0 10px 0 0;
+        transform: scaleY(-1);
+    }
+    
+    .faqQuestionArrowDown {
+        background-image: url(../assets/faq_arrow.png);
+        width: 15px;
+        height: 7px;
+        margin: 0 10px 0 0;
+    }
+    
+    .faqQuestionText {
+        font-size: 14px;
+        line-height: 19px;
+        margin: 0 0 20px 0;
     }
 
     .drawingGirlRocket {
@@ -2626,8 +3163,8 @@
         position: absolute;
         width: 143px;
         height: 138px;
-        top: 100px;
-        left: 880px;
+        top: -100px;
+        left: 830px;
         transform: scale(0.7);
     }
 
@@ -2636,7 +3173,7 @@
         position: absolute;
         width: 161px;
         height: 63px;
-        top: 30px;
+        top: -130px;
         left: 970px;
         transform: scale(0.7);
     }
@@ -2646,7 +3183,7 @@
         position: absolute;
         width: 205px;
         height: 70px;
-        top: 100px;
+        top: -90px;
         left: 1120px;
         transform: scale(0.7);
     }
@@ -2656,7 +3193,7 @@
         position: absolute;
         width: 185px;
         height: 76px;
-        top: 210px;
+        top: 50px;
         left: 810px;
     }
 
@@ -2665,7 +3202,7 @@
         position: absolute;
         width: 148px;
         height: 249px;
-        top: 160px;
+        top: -80px;
         left: 970px;
     }
 
@@ -2674,7 +3211,7 @@
         position: absolute;
         width: 135px;
         height: 135px;
-        top: 210px;
+        top: -20px;
         left: 1110px;
         transform: scale(0.7);
     }
@@ -2705,8 +3242,8 @@
     }
 
     .headerButton {
-        transform: scale(0.7);
-        margin: 20px 0 50px -830px;
+        transform: scale(0.8);
+        margin: 20px 0 50px -800px;
     }
 
     .promoVideo {

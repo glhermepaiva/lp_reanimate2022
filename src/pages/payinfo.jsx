@@ -423,7 +423,7 @@ const PayInfo = () => {
                     <div className={styles.faq}>
                         <div className={styles.faqTitle}>Perguntas frequentes</div>
                         <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou <div className={styles.faqContact}>entre em contato</div>.</div>
-                        <div>
+                        <div className={styles.faqContainer}>
                             <div className={styles.faqLine} />
                             {question1Closed ?
                             <div className={styles.faqQuestion}>
