@@ -316,6 +316,8 @@ const PayInfo = () => {
                         <div className={styles.cloud4Plans} />
                         <div className={styles.cloud5Plans} />
                         <div className={styles.cloud6Plans} />
+
+                    <div style={{display: size.width >= 1600 ? 'flex' : 'block', flexWrap: 'wrap', flexDirection: 'column', height: size.width >= 1600 ? '1500px' : 'auto', margin: size.width >= 1600 ? '50px 0 0 0' : '0 0 0 0'}}>
                         <div className={styles.paymentMethod}>
                             {size.width < 720 ?
                             <div className={styles.paymentMethodTitle}>Selecione seu<br/> método de pagamento</div>
@@ -417,10 +419,12 @@ const PayInfo = () => {
                                 Você também concorda com a renovação automática do seu plano anual no valor de R$ 999,99 que pode ser desativada a qualquer momento pela sua conta. Os dados do seu cartão serão salvos para compras futuras e renovações de assinatura.
                             </div>
                         </div>
+                    </div>    
                         
                     </div>
 
                     <div className={styles.faq}>
+                        <div className={styles.faqInner}>
                         <div className={styles.faqTitle}>Perguntas frequentes</div>
                         <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou <div className={styles.faqContact}>entre em contato</div>.</div>
                         <div className={styles.faqContainer}>
@@ -477,6 +481,7 @@ const PayInfo = () => {
                                 <div className={styles.faqQuestionText}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</div>
                             </div>
                             }
+                        </div>
                         </div>
                     </div>
 

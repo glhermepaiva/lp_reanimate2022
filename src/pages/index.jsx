@@ -114,12 +114,28 @@ export default function LandingPage() {
 
     /***** PRICE SWITCH  *****/
 
-    const [div1ZIndex, setDiv1ZIndex] = useState(1);
-    const [div2ZIndex, setDiv2ZIndex] = useState(0);
+    const [div1ZIndexB, setDiv1ZIndexB] = useState(1);
+    const [div2ZIndexB, setDiv2ZIndexB] = useState(0);
       
-    const swapZIndex = () => {
-        setDiv1ZIndex(div1ZIndex === 0 ? 1 : 0);
-        setDiv2ZIndex(div2ZIndex === 0 ? 1 : 0);
+    const swapZIndexB = () => {
+        setDiv1ZIndexB(div1ZIndexB === 0 ? 1 : 0);
+        setDiv2ZIndexB(div2ZIndexB === 0 ? 1 : 0);
+    };
+
+    const [div1ZIndexP, setDiv1ZIndexP] = useState(1);
+    const [div2ZIndexP, setDiv2ZIndexP] = useState(0);
+      
+    const swapZIndexP = () => {
+        setDiv1ZIndexP(div1ZIndexP === 0 ? 1 : 0);
+        setDiv2ZIndexP(div2ZIndexP === 0 ? 1 : 0);
+    };
+
+    const [div1ZIndexA, setDiv1ZIndexA] = useState(1);
+    const [div2ZIndexA, setDiv2ZIndexA] = useState(0);
+      
+    const swapZIndexA = () => {
+        setDiv1ZIndexA(div1ZIndexA === 0 ? 1 : 0);
+        setDiv2ZIndexA(div2ZIndexA === 0 ? 1 : 0);
     };
 
     /***** PAGINATION *****/
@@ -440,7 +456,7 @@ export default function LandingPage() {
                 <div className={styles.cloud5Plans} />
                 <div className={styles.cloud6Plans} />
                 {size.width >= 1200 ?
-                    <Swiper initialSlide={1} slidesPerView={3} centeredSlides={true} className={styles.carouselCards} style={{height: '800px', margin: '-200px 0 0 0'}}>
+                    <Swiper initialSlide={1} slidesPerView={3} centeredSlides={true} className={styles.carouselCards} style={{height: '800px', margin: '-200px 0 0 0', width: '1200px'}}>
                     <SwiperSlide>
                     <div className={styles.carouselCard}>
                     <div className={styles.carouselContainerTitle2}>
@@ -461,10 +477,10 @@ export default function LandingPage() {
                             <div className={styles.carouselCardIconInformation} />
                         </div>
                         <div className={styles.carouselContainerPayOptions}>
-                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexB, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexB}>
                                 <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                             </div>
-                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexB, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexB}>
                                 <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                             </div>
                         </div>
@@ -518,10 +534,10 @@ export default function LandingPage() {
                             </div>
 
                             <div className={styles.carouselContainerPayOptions}>
-                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexP, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexP}>
                                     <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                                 </div>
-                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexP, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexP}>
                                     <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                                 </div>
                             </div>
@@ -582,10 +598,10 @@ export default function LandingPage() {
                             <div className={styles.carouselCardIconInformation} />
                         </div>
                         <div className={styles.carouselContainerPayOptions}>
-                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexA, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexA}>
                                 <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                             </div>
-                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexA, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexA}>
                                 <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                             </div>
                         </div>
@@ -644,10 +660,10 @@ export default function LandingPage() {
                             <div className={styles.carouselCardIconInformation} />
                         </div>
                         <div className={styles.carouselContainerPayOptions}>
-                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexB, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexB}>
                                 <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                             </div>
-                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexB, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexB}>
                                 <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                             </div>
                         </div>
@@ -701,10 +717,10 @@ export default function LandingPage() {
                             </div>
 
                             <div className={styles.carouselContainerPayOptions}>
-                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexP, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexP}>
                                     <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                                 </div>
-                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexP, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexP}>
                                     <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                                 </div>
                             </div>
@@ -765,10 +781,10 @@ export default function LandingPage() {
                             <div className={styles.carouselCardIconInformation} />
                         </div>
                         <div className={styles.carouselContainerPayOptions}>
-                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexA, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexA}>
                                 <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                             </div>
-                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexA, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexA}>
                                 <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                             </div>
                         </div>
@@ -827,10 +843,10 @@ export default function LandingPage() {
                             <div className={styles.carouselCardIconInformation} />
                         </div>
                         <div className={styles.carouselContainerPayOptions}>
-                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexB, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexB}>
                                 <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                             </div>
-                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexB, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexB}>
                                 <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                             </div>
                         </div>
@@ -884,10 +900,10 @@ export default function LandingPage() {
                             </div>
 
                             <div className={styles.carouselContainerPayOptions}>
-                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexP, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexP}>
                                     <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                                 </div>
-                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                                <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexP, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexP}>
                                     <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                                 </div>
                             </div>
@@ -948,10 +964,10 @@ export default function LandingPage() {
                             <div className={styles.carouselCardIconInformation} />
                         </div>
                         <div className={styles.carouselContainerPayOptions}>
-                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerWhite} style={{zIndex: div1ZIndexA, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexA}>
                                 <div className={styles.carouselContainerWhiteText}>Pagamento Mensal</div>
                             </div>
-                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndex, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndex}>
+                            <div className={styles.carouselContainerPink} style={{zIndex: div2ZIndexA, transition: 'z-index 0.5s ease-in-out'}} onClick={swapZIndexA}>
                                 <div className={styles.carouselContainerPinkText}>Pagamento Anual com x% de desconto</div>
                             </div>
                         </div>
