@@ -420,13 +420,14 @@
     justify-content: space-between;
     align-items: center;
     width: 260px;
-    margin: 0 0 20px 0;
+    margin: 0 0 50px 0;
 }
 
 .paymentOptionsApprovalIcon {
     background-image: url(../assets/icon_approval.png);
     width: 38px;
     height: 43px;
+    transform: scale(0.8);
 }
 
 .paymentOptionsTestText {
@@ -434,7 +435,7 @@
     line-height: 14px;
     font-weight: bold;
     width: 50px;
-    margin: 0 0 0 -15px;
+    margin: -35px 0 0 50px;
 }
 
 .paymentOptionsLine1 {
@@ -448,13 +449,15 @@
     width: 1px;
     height: 31px;
     background-color: #E8336A;
+    margin: 0 0 0 -50px;
 }
 
 .paymentOptionsSecurityIcon {
     background-image: url(../assets/icon_security.png);
     width: 34px;
     height: 43px;
-    margin: 0 -15px 0 0;
+    margin: -3px 0 0 -50px;
+    transform: scale(0.8);
 }
 
 .paymentOptionsPaymentText {
@@ -462,6 +465,7 @@
     line-height: 14px;
     font-weight: bold;
     width: 60px;
+    margin: -35px 0 0 0;
 }
 
 .faq {
@@ -580,7 +584,7 @@
 
   .galleryModal {
     position: fixed;
-    background-color: #b4b4b4;
+    background-color: rgba(180, 180, 180, 1);
     width: 100vw;
     height: 100vh;
     z-index: 999;
@@ -700,6 +704,7 @@
     border-radius: 5px;
     border: #000 2px solid;
     margin: 10px 0 10px 0;
+    padding: 0 0 0 5px;
   }
 
   .modalLoginFormPassword {
@@ -712,6 +717,7 @@
     border-radius: 5px;
     border: #000 2px solid;
     margin: 10px 0 10px 0;
+    padding: 0 0 0 5px;
   }
 
   .modalLoginRememberContainer {
@@ -766,6 +772,7 @@
     border-radius: 5px;
     border: #000 2px solid;
     margin: 10px 0 10px 0;
+    padding: 0 0 0 5px;
   }
 
   .modalLoginFormRegisterButton {
@@ -2256,6 +2263,7 @@
         height: 31px;
         background-color: #E8336A;
         display: block;
+        margin: 0 -50px 0 0;
     }
 
     .paymentOptionsLine2 {
@@ -2491,6 +2499,7 @@
         border-radius: 5px;
         border: #000 2px solid;
         margin: 10px 0 10px 0;
+        font-size: 22px;
       }
     
       .modalLoginFormPassword {
@@ -2505,6 +2514,7 @@
         border-radius: 5px;
         border: #000 2px solid;
         margin: 10px 0 10px 0;
+        font-size: 22px;
       }
     
       .modalLoginRememberContainer {
@@ -2571,6 +2581,7 @@
         border-radius: 5px;
         border: #000 2px solid;
         margin: 10px 0 10px 0;
+        font-size: 22px;
       }
     
       .modalLoginFormRegisterButton {
@@ -2614,9 +2625,105 @@
         line-height: 24px;
         margin: 5px 0 25px 0;
     }
+
+    .client1 {
+        background-image: url(../assets/media/client01.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto -120px auto;
+    }
+    
+    .client2 {
+        background-image: url(../assets/media/client02.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto -120px auto;
+    }
+    
+    .client3 {
+        background-image: url(../assets/media/client03.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto;
+    }
+    
+    .client4 {
+        background-image: url(../assets/media/client04.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto -120px auto;
+    }
+    
+    .client5 {
+        background-image: url(../assets/media/client05.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto -120px auto;
+    }
+    
+    .client6 {
+        background-image: url(../assets/media/client06.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto;
+    }
+    
+    .client7 {
+        background-image: url(../assets/media/client07.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto -120px auto;
+    }
+    
+    .client8 {
+        background-image: url(../assets/media/client08.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto -120px auto;
+    }
+    
+    .client9 {
+        background-image: url(../assets/media/client09.png);
+        width: 283px;
+        height: 283px;
+        transform: scale(1);
+        margin: 0 auto;
+    }
+
+    .footerIconFb {
+        transform: scale(1.3);
+    }
+    
+    .footerIconInsta {
+        transform: scale(1.3);
+    }
+    
+    .footerIconLinkedin {
+        transform: scale(1.3);
+    }
 }
 
 @media (min-width: 1200px) {
+
+    .galleryModal {
+        background-color: rgba(180, 180, 180, 0.7);
+      }
+
+    .paymentOptionsSecurityIcon {
+        background-image: url(../assets/icon_security.png);
+        width: 34px;
+        height: 43px;
+        margin: -3px 0 0 -0px;
+        transform: scale(0.8);
+    }
 
     .hoverLogoClose {
         width: 100vw;
@@ -2641,7 +2748,7 @@
 
     .headerLogoHamb {
         margin: 35px auto 50px auto;
-        width: 80%;
+        width: 980px;
         justify-content: space-between;
     }
 
@@ -2650,7 +2757,7 @@
         width: 240px;
         height: 87px;
         transform: scale(1);
-        margin: 0 0px 0 85px;
+        margin: 0 0px 0 0px;
     }
 
     .headerButtons {
@@ -2660,7 +2767,7 @@
     .headerPlans {
         height: auto;
         margin: 35px auto 50px auto;
-        width: 80%;
+        width: 980px;
         justify-content: space-between;
     }
 
@@ -2668,7 +2775,7 @@
         background-image: url(../assets/logo_reanimatem.png);
         width: 240px;
         height: 87px;
-        margin: 0px 0 0 85px;
+        margin: 0px 0 0 0px;
     }
 
     .loginButton {

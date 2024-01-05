@@ -22,7 +22,7 @@ const PayBoleto = () => {
         setMenuOpen(false)
     }
 
-    /***** BUTTON SHOW REEL *****/
+    /***** BUTTON SHOW MENU *****/
 
     const [reelOpen, setReelOpen] = useState(false)
 
@@ -56,6 +56,24 @@ const PayBoleto = () => {
 
     const refresh = () => {
         router.reload()
+    }
+
+    /***** LINKS *****/
+
+    function reanimLink () {
+        window.open('https://www.reanimate.com.br/', "_self");
+    }
+
+    function fbLink () {
+        window.open('https://www.facebook.com/Point-Media-2496784783713500');
+    }
+
+    function instaLink () {
+        window.open('https://www.instagram.com/pointmediaoficial/');
+    }
+
+    function linkedinLink () {
+        window.open('https://www.linkedin.com/company/point-media-oficial/');
     }
 
     /***** OTHER *****/
@@ -98,22 +116,6 @@ const PayBoleto = () => {
       }
     
     const size = useWindowSize();
-
-    function reanimLink () {
-        window.open('https://www.reanimate.com.br/', "_self");
-    }
-
-    function fbLink () {
-        window.open('https://www.facebook.com/Point-Media-2496784783713500');
-    }
-
-    function instaLink () {
-        window.open('https://www.instagram.com/pointmediaoficial/');
-    }
-
-    function linkedinLink () {
-        window.open('https://www.linkedin.com/company/point-media-oficial/');
-    }
 
     /***** RETURN *****/
 

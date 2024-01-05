@@ -233,7 +233,7 @@ const PayInfo = () => {
                         :
                         <div className={styles.modalLoginTitle2}>Crie sua conta gratuita</div>
                         }
-                        <div className={styles.modalLoginGoogleButton}>
+                        <div className={styles.modalLoginGoogleButton} onClick={() => alert('Logando...')}>
                             <div className={styles.googleLogo} />
                             <div className={styles.googleLogin}>Login com Google</div>
                         </div>
@@ -256,8 +256,8 @@ const PayInfo = () => {
                             <button className={styles.modalLoginFormRegisterButton}>Cadastrar</button>
                         </form>
                         <div className={styles.modalLoginLine2}></div>
-                        <div className={styles.modalLoginText2}>Ao criar sua conta, você aceita nossos<br/><div className={styles.modalLoginTextLink}>Termos de Serviço </div>
-                        e <div className={styles.modalLoginTextLink}>Política de Privacidade</div>.</div>
+                        <div className={styles.modalLoginText2}>Ao criar sua conta, você aceita nossos<br/><div className={styles.modalLoginTextLink} onClick={() => alert('Termos de serviço...')}>Termos de Serviço </div>
+                        e <div className={styles.modalLoginTextLink} onClick={() => alert('Política de privacidade...')}>Política de Privacidade</div>.</div>
                     </div>
                 </div> 
                 :
@@ -265,7 +265,7 @@ const PayInfo = () => {
                     <div className={styles.modalClose} onClick={closeReel} />
                     <div className={styles.modalLogin}>
                         <div className={styles.modalLoginTitle}>Faça login na sua conta</div>
-                        <div className={styles.modalLoginGoogleButton}>
+                        <div className={styles.modalLoginGoogleButton} onClick={() => alert('Logando...')}>
                             <div className={styles.googleLogo} />
                             <div className={styles.googleLogin}>Login com Google</div>
                         </div>
@@ -284,7 +284,7 @@ const PayInfo = () => {
                                 <div className={styles.modalLoginFormRemember}>Remember Me</div>
                             </div>
                             <button className={styles.modalLoginFormLogInButton}>Log In</button>
-                            <div className={styles.modalLoginFormForgotPassword}>Esqueceu sua senha?</div>
+                            <div className={styles.modalLoginFormForgotPassword} onClick={() => alert('Esqueceu sua senha...')}>Esqueceu sua senha?</div>
                         </form>
                         <div className={styles.modalLoginLine2}></div>
                         <div className={styles.modalLoginText}>Não tem uma conta? <div className={styles.modalLoginTextLink} onClick={openCreateAccount}>Crie seu login.</div></div>
@@ -415,7 +415,7 @@ const PayInfo = () => {
                                 <div className={styles.paymentSummaryFreeTestIcon} />
                                 <div className={styles.paymentSummaryFreeTestText}>7 dias de teste gratuito</div>
                             </div>
-                            <div className={styles.paymentSummaryText}>Ao comprar, você aceita os <div className={styles.paymentSummaryTextTerms}>Termos de Serviço</div> e reconhece a leitura da <div className={styles.paymentSummaryTextPrivacy}>Política de Privacidade</div>.
+                            <div className={styles.paymentSummaryText}>Ao comprar, você aceita os <div className={styles.paymentSummaryTextTerms} onClick={() => alert('Termos de serviço...')}>Termos de Serviço</div> e reconhece a leitura da <div className={styles.paymentSummaryTextPrivacy} onClick={() => alert('Política de privacidade...')}>Política de Privacidade</div>.
                                 Você também concorda com a renovação automática do seu plano anual no valor de R$ 999,99 que pode ser desativada a qualquer momento pela sua conta. Os dados do seu cartão serão salvos para compras futuras e renovações de assinatura.
                             </div>
                         </div>
@@ -426,7 +426,10 @@ const PayInfo = () => {
                     <div className={styles.faq}>
                         <div className={styles.faqInner}>
                         <div className={styles.faqTitle}>Perguntas frequentes</div>
-                        <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou <div className={styles.faqContact}>entre em contato</div>.</div>
+                        <div className={styles.faqText}>Não encontrou o que está buscando? Visite o nosso FAQ ou 
+                        <Link href="/form?uri=" as={"/form"} passHref>
+                        <div className={styles.faqContact}> entre em contato</div>
+                        </Link>.</div>
                         <div className={styles.faqContainer}>
                             <div className={styles.faqLine} />
                             {question1Closed ?

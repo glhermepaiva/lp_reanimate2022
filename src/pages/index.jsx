@@ -168,6 +168,14 @@ export default function LandingPage() {
                 margin: 0px 10px !important;
                 background-color: #E8336A;
             }
+        
+            @media (min-width: 720px) and (max-width: 1199px) {
+
+                .swiper-pagination {
+                    margin: 0px 0 20px 0 !important;
+                } 
+
+            }
 
             @media (min-width: 1200px) {
                 
@@ -355,7 +363,7 @@ export default function LandingPage() {
                     :
                     <div className={styles.modalLoginTitle2}>Crie sua conta gratuita</div>
                     }
-                    <div className={styles.modalLoginGoogleButton}>
+                    <div className={styles.modalLoginGoogleButton} onClick={() => alert('Logando...')}>
                         <div className={styles.googleLogo} />
                         <div className={styles.googleLogin}>Login com Google</div>
                     </div>
@@ -393,8 +401,8 @@ export default function LandingPage() {
                         <button className={styles.modalLoginFormRegisterButton}>Cadastrar</button>
                     </form>
                     <div className={styles.modalLoginLine2}></div>
-                    <div className={styles.modalLoginText2}>Ao criar sua conta, você aceita nossos<br/><div className={styles.modalLoginTextLink}>Termos de Serviço </div>
-                    e <div className={styles.modalLoginTextLink}>Política de Privacidade</div>.</div>
+                    <div className={styles.modalLoginText2}>Ao criar sua conta, você aceita nossos<br/><div className={styles.modalLoginTextLink} onClick={() => alert('Termos de serviço...')}>Termos de Serviço </div>
+                    e <div className={styles.modalLoginTextLink} onClick={() => alert('Política de privacidade...')}>Política de Privacidade</div>.</div>
                 </div>
             </div> 
             :
@@ -402,7 +410,7 @@ export default function LandingPage() {
                 <div className={styles.modalClose} onClick={closeReel} />
                 <div className={styles.modalLogin}>
                     <div className={styles.modalLoginTitle}>Faça login na sua conta</div>
-                    <div className={styles.modalLoginGoogleButton}>
+                    <div className={styles.modalLoginGoogleButton} onClick={() => alert('Logando...')}>
                         <div className={styles.googleLogo} />
                         <div className={styles.googleLogin}>Login com Google</div>
                     </div>
@@ -421,7 +429,7 @@ export default function LandingPage() {
                             <div className={styles.modalLoginFormRemember}>Remember Me</div>
                         </div>
                         <button className={styles.modalLoginFormLogInButton}>Log In</button>
-                        <div className={styles.modalLoginFormForgotPassword}>Esqueceu sua senha?</div>
+                        <div className={styles.modalLoginFormForgotPassword} onClick={() => alert('Esqueceu sua senha...')}>Esqueceu sua senha?</div>
                     </form>
                     <div className={styles.modalLoginLine2}></div>
                     <div className={styles.modalLoginText}>Não tem uma conta? <div className={styles.modalLoginTextLink} onClick={openCreateAccount}>Crie seu login.</div></div>
