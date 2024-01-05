@@ -3646,4 +3646,8 @@ margin: 0 0 0 -10px;
 
 @media (min-width: 2400px) {
 
+  .paymentMethodFinalContainer2 {
+    margin: 10px 0 0 790px;
+  }
+
 }
