@@ -173,7 +173,6 @@ export default function LandingPage() {
                 <Link href="/formen?uri=" as={"/formen"} passHref>
                     <button className={styles.headerButton}>TRY IT NOW!<div className={styles.headerButtonArrow} /></button>
                 </Link>   
-                {/* <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div> */}
         </div>
         <div className={styles.advantages}>
             <div className={styles.qualityBox}>
@@ -307,7 +306,6 @@ export default function LandingPage() {
                     <Link href="/formbr?uri=" as={"/formbr"} passHref>
                         <button className={styles.headerButton}>Contrate agora <div className={styles.headerButtonArrow} /></button>
                     </Link>
-                    {/* <div className={styles.promoVideo}><ReactPlayer url="https://www.youtube.com/watch?v=tH4jyWTEnfs"/></div> */}
             </div>
             <div className={styles.advantages}>
                 <div className={styles.qualityBox}>
@@ -374,30 +372,6 @@ export default function LandingPage() {
                     </Link>
                 </div>
             </div>
-            {/* <div className={styles.blankSpace}></div>
-            <div className={styles.moviebox}>
-                <div className={styles.movieLogoText}>
-                    <div className={styles.movieboxLogo} />
-                    <div className={styles.movieboxText}>Com o “Re.Animate to Movie”, você consegue transformar seus projetos (arquivos .REAN) em arquivos de vídeo (.MP4) e GIFs. Assim, você conta com todos os formatos que precisa para deixar sua campanha pra lá de completa.</div>
-                </div>
-                <div className={styles.movieboxVideoButton}>
-                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
-                        <button className={styles.movieboxButton}>Contrate agora<div className={styles.movieboxButtonArrow} /></button>
-                    </Link>
-                </div>
-            </div>
-            <div className={styles.blankSpace}></div>
-            <div className={styles.automailerbox}>
-                <div className={styles.amLogoText}>
-                    <div className={styles.amboxLogo} />
-                    <div className={styles.amboxText}>Sua operação muito mais ágil com uma ferramenta que permite a produção otimizada de e-mail marketing em poucos cliques.</div>
-                </div>
-                <div className={styles.amboxVideoButton}>
-                    <Link href="/formbr?uri=" as={"/formbr"} passHref>
-                        <button className={styles.amboxButton}>Contrate agora<div className={styles.amboxButtonArrow} /></button>
-                    </Link>
-                </div>
-            </div> */}
             <div className={styles.blankSpace}></div>
             <div className={styles.about}>
                 <div className={styles.aboutBG} />
